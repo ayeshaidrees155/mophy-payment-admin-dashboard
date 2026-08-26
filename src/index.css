@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+
+@theme {
+    --font-sans: "Poppins", sans-serif;
+}
+
+:root {
+    --bg-blue: #E8F6FD;
+    --blue-clr: #1EAAE7;
+    --gray-clr: #7E7E7E;
+
+    --text-title: 14px;
+    --text-body: 12.25px;
+    --text-heading: 17.25px;
+    --border-grey: #d7d3d3
+}
+
+[data-theme='light'] {
+    --bg-header: #FFFFFF;
+    --bg-body: #F5F5F5;
+    --black-clr: #312A2A;
+    --bg-white: #FFFFFF;
+
+}
+
+
+[data-theme='dark'] {
+    --bg-header: #1E2746;
+    --bg-body: #181F39;
+    --black-clr: white;
+    --bg-white: #1E2746;
+}
+
+
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: var(--bg-body);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--gray-clr);
+    border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--blue-clr);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+
+    -webkit-text-fill-color: inherit !important;
+}
