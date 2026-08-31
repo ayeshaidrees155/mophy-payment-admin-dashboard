@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Divider, FormControlLabel, Typography, TextField, OutlinedInput, TextareaAutosize, MenuItem, Stack, InputLabel, IconButton, InputAdornment, Checkbox, Button, Grid } from '@mui/material'
+import { Box, Divider, FormControlLabel, Typography, TextField, OutlinedInput, TextareaAutosize, MenuItem, Stack, InputLabel, IconButton, InputAdornment, Checkbox, Button, Radio } from '@mui/material'
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { RadioButtonChecked, RadioButtonUnchecked } from '@mui/icons-material';
@@ -472,34 +472,52 @@ export default function Elements() {
 
 
             {/* horizontal form */}
-            <Box className=" w-full  md:!w-[47%]  rounded-md bg-white !pb-10 h-[500px]" sx={{ backgroundColor: "var(--bg-header)" }}>
+            {/* horizontal form */}
+            <Box className="w-full md:!w-[47%] rounded-md bg-white !pb-10 h-auto" sx={{ backgroundColor: "var(--bg-header)" }}>
                 <Box className="!p-5">
-                    <Typography className='!text-(size:--text-heading)  !text-(color:--black-clr)'> Horizontal Form</Typography>
-
+                    <Typography className='!text-(size:--text-heading) !text-(color:--black-clr)'> Horizontal Form</Typography>
                 </Box>
                 <Divider className='!w-full !p-0' />
                 <Box className="!p-5 mt-3">
-                    <Box className="!flex !flex-row !flex-wrap gap-6 ">
-                        <Stack className='!flex !flex-col w-[47%] !justify-start !items-start  '>
-                            <Typography className='!text-(size:--text-title) !w-24 '>Name</Typography>
+                    <Box className="!flex !flex-row !flex-wrap gap-4">
 
+                        {/* Name */}
+                        <Stack className='!flex !flex-col w-full md:!w-[47%] !justify-start !items-start'>
+                            <Typography className='!text-(size:--text-title) !text-(color:--black-clr) !w-24 mb-1'>Name</Typography>
                             <TextField
                                 variant="outlined"
                                 fullWidth
-                                type='email'
+                                type='text'
                                 placeholder="Name"
+                                slotProps={{
+                                    htmlInput: { style: { fontSize: '16px', touchAction: 'manipulation' } }
+                                }}
                                 sx={{
-                                    bg: "white", color: "var(--gray-clr)",
+                                    color: "var(--gray-clr)",
                                     "& .MuiInputBase-root": {
-                                        height: "40px",
+                                        height: "40px !important",
+                                        minHeight: "40px !important",
+                                        maxHeight: "40px !important",
                                         color: "var(--gray-clr)",
-
+                                        backgroundColor: "var(--bg-header)",
+                                        boxSizing: "border-box",
                                     },
-
+                                    "& .MuiInputBase-input": {
+                                        height: "40px !important",
+                                        boxSizing: "border-box",
+                                        padding: "0 14px",
+                                        "&:-webkit-autofill": {
+                                            WebkitBoxShadow: "0 0 0 1000px var(--bg-header) inset !important",
+                                            WebkitTextFillColor: "var(--gray-clr) !important",
+                                            caretColor: "var(--gray-clr)",
+                                            transition: "background-color 9999s ease-in-out 0s",
+                                            height: "40px !important",
+                                            padding: "0 14px !important",
+                                        },
+                                    },
                                     "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
                                         borderColor: "var(--border-grey)",
                                     },
-
                                     "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
                                         borderColor: "var(--blue-clr)",
                                         borderWidth: "1px"
@@ -507,46 +525,84 @@ export default function Elements() {
                                 }}
                             />
                         </Stack>
-                        <Stack className='!flex !flex-col w-[47%]  !justify-start !items-start  '>
-                            <Typography className='!text-(size:--text-title) !w-24 '>Email</Typography>
 
+                        {/* Email */}
+                        <Stack className='!flex !flex-col w-full md:!w-[47%] !justify-start !items-start'>
+                            <Typography className='!text-(size:--text-title) !text-(color:--black-clr) !w-24 mb-1'>Email</Typography>
                             <TextField
                                 variant="outlined"
                                 fullWidth
                                 type='email'
                                 placeholder="Email"
+                                slotProps={{
+                                    htmlInput: { style: { fontSize: '16px', touchAction: 'manipulation' } }
+                                }}
                                 sx={{
-                                    bg: "white", color: "var(--gray-clr)",
+                                    color: "var(--gray-clr)",
                                     "& .MuiInputBase-root": {
-                                        height: "40px",
+                                        height: "40px !important",
+                                        minHeight: "40px !important",
+                                        maxHeight: "40px !important",
                                         color: "var(--gray-clr)",
-
+                                        backgroundColor: "var(--bg-header)",
+                                        boxSizing: "border-box",
                                     },
-                                    // hover
+                                    "& .MuiInputBase-input": {
+                                        height: "40px !important",
+                                        boxSizing: "border-box",
+                                        padding: "0 14px",
+                                        "&:-webkit-autofill": {
+                                            WebkitBoxShadow: "0 0 0 1000px var(--bg-header) inset !important",
+                                            WebkitTextFillColor: "var(--gray-clr) !important",
+                                            caretColor: "var(--gray-clr)",
+                                            transition: "background-color 9999s ease-in-out 0s",
+                                            height: "40px !important",
+                                            padding: "0 14px !important",
+                                        },
+                                    },
                                     "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
                                         borderColor: "var(--border-grey)",
                                     },
-                                    //focus effect
                                     "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
                                         borderColor: "var(--blue-clr)",
-                                        borderWidth: "1px" // Controls the outline thickness
+                                        borderWidth: "1px"
                                     }
                                 }}
                             />
                         </Stack>
-                        <Stack className='!flex !flex-col w-[47%] !justify-start !items-start'>
-                            <Typography className='!text-(size:--text-title) !w-24'>Password</Typography>
+
+                        {/* Password */}
+                        <Stack className='!flex !flex-col w-full md:!w-[47%] !justify-start !items-start'>
+                            <Typography className='!text-(size:--text-title) !text-(color:--black-clr) !w-24 mb-1'>Password</Typography>
                             <OutlinedInput
-                                id={`${outlinedPasswordId}-input`}
                                 type={showPassword ? 'text' : 'password'}
                                 placeholder="Password"
                                 fullWidth
+                                slotProps={{
+                                    htmlInput: { style: { fontSize: '16px', touchAction: 'manipulation' } }
+                                }}
                                 sx={{
-                                    bg: "white",
                                     color: "var(--gray-clr)",
-                                    height: "40px",
+                                    height: "40px !important",
+                                    minHeight: "40px !important",
+                                    maxHeight: "40px !important",
+                                    backgroundColor: "var(--bg-header)",
+                                    boxSizing: "border-box",
                                     "& .MuiInputBase-input": {
                                         color: "var(--gray-clr)",
+                                        fontSize: "16px",
+                                        height: "40px !important",
+                                        boxSizing: "border-box",
+                                        padding: "0 14px",
+                                        backgroundColor: "var(--bg-header)",
+                                        "&:-webkit-autofill": {
+                                            WebkitBoxShadow: "0 0 0 1000px var(--bg-header) inset !important",
+                                            WebkitTextFillColor: "var(--gray-clr) !important",
+                                            caretColor: "var(--gray-clr)",
+                                            transition: "background-color 9999s ease-in-out 0s",
+                                            height: "40px !important",
+                                            padding: "0 14px !important",
+                                        },
                                     },
                                     "&:hover .MuiOutlinedInput-notchedOutline": {
                                         borderColor: "var(--border-grey)",
@@ -559,9 +615,7 @@ export default function Elements() {
                                 endAdornment={
                                     <InputAdornment position="end">
                                         <IconButton
-                                            aria-label={
-                                                showPassword ? 'hide the password' : 'display the password'
-                                            }
+                                            aria-label={showPassword ? 'hide the password' : 'display the password'}
                                             onClick={handleClickShowPassword}
                                             onMouseDown={handleMouseDownPassword}
                                             onMouseUp={handleMouseUpPassword}
@@ -573,179 +627,236 @@ export default function Elements() {
                                 }
                             />
                         </Stack>
-                        <Stack className='!flex !flex-col w-[47%] !justify-start !items-start  '>
-                            <Typography className='!text-(size:--text-title) !w-24 '>City</Typography>
 
+                        {/* City */}
+                        <Stack className='!flex !flex-col w-full md:!w-[47%] !justify-start !items-start'>
+                            <Typography className='!text-(size:--text-title) !text-(color:--black-clr) !w-24 mb-1'>City</Typography>
                             <TextField
                                 variant="outlined"
                                 fullWidth
-
                                 placeholder="City"
+                                slotProps={{
+                                    htmlInput: { style: { fontSize: '16px', touchAction: 'manipulation' } }
+                                }}
                                 sx={{
-                                    bg: "white", color: "var(--gray-clr)",
+                                    color: "var(--gray-clr)",
                                     "& .MuiInputBase-root": {
-                                        height: "40px",
+                                        height: "40px !important",
+                                        minHeight: "40px !important",
+                                        maxHeight: "40px !important",
                                         color: "var(--gray-clr)",
-                                        // marginY: 1
+                                        backgroundColor: "var(--bg-header)",
+                                        boxSizing: "border-box",
                                     },
-                                    // hover
+                                    "& .MuiInputBase-input": {
+                                        height: "40px !important",
+                                        boxSizing: "border-box",
+                                        padding: "0 14px",
+                                        "&:-webkit-autofill": {
+                                            WebkitBoxShadow: "0 0 0 1000px var(--bg-header) inset !important",
+                                            WebkitTextFillColor: "var(--gray-clr) !important",
+                                            caretColor: "var(--gray-clr)",
+                                            transition: "background-color 9999s ease-in-out 0s",
+                                            height: "40px !important",
+                                            padding: "0 14px !important",
+                                        },
+                                    },
                                     "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
                                         borderColor: "var(--border-grey)",
                                     },
-                                    //focus effect
                                     "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
                                         borderColor: "var(--blue-clr)",
-                                        borderWidth: "1px" // Controls the outline thickness
+                                        borderWidth: "1px"
                                     }
                                 }}
                             />
                         </Stack>
-                        <Stack className='!flex !flex-col w-[30%] !justify-start !items-start  '>
-                            <Typography className='!text-(size:--text-title) !w-24 '>State</Typography>
 
+                        {/* State */}
+                        <Stack className='!flex !flex-col w-full sm:!w-[48%] md:!w-[30%] !justify-start !items-start'>
+                            <Typography className='!text-(size:--text-title) !text-(color:--black-clr) !w-24 mb-1'>State</Typography>
                             <TextField
                                 fullWidth
                                 size="small"
                                 select
-
+                                defaultValue=""
+                                slotProps={{
+                                    htmlInput: { style: { fontSize: '16px', touchAction: 'manipulation' } }
+                                }}
                                 sx={{
-                                    mb: 1, mt: 1, bg: "white", color: "var(--gray-clr)",
+                                    color: "var(--gray-clr)",
                                     "& .MuiInputBase-root": {
-                                        height: "40px",
+                                        height: "40px !important",
+                                        minHeight: "40px !important",
+                                        maxHeight: "40px !important",
                                         color: "var(--gray-clr)",
-                                        fontSize: "var(--text-body)"
-
+                                        fontSize: "var(--text-body)",
+                                        backgroundColor: "var(--bg-header)",
+                                        boxSizing: "border-box",
                                     },
-                                    // hover
                                     "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
                                         borderColor: "var(--border-grey)",
                                     },
-                                    //focus effect
                                     "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
                                         borderColor: "var(--blue-clr)",
                                         borderWidth: "1px"
                                     }
                                 }}
                             >
-
-                                <MenuItem className="!text-(color:--gray-clr) !text-(size:--text-title)">
-                                    Choose...                                </MenuItem>
+                                <MenuItem value="" disabled className="!text-(color:--gray-clr) !text-(size:--text-title)">
+                                    Choose...
+                                </MenuItem>
                                 <MenuItem value="option 1" className="!text-(color:--gray-clr) !text-(size:--text-title)">
                                     Option 1
                                 </MenuItem>
-
                                 <MenuItem value="option 2" className="!text-(color:--gray-clr) !text-(size:--text-title)">
                                     Option 2
                                 </MenuItem>
-
                                 <MenuItem value="option 3" className="!text-(color:--gray-clr) !text-(size:--text-title)">
                                     Option 3
                                 </MenuItem>
                             </TextField>
                         </Stack>
-                        <Stack className='!flex !flex-col w-[10%] !justify-start !items-start  '>
-                            <Typography className='!text-(size:--text-title) !w-24 '>Zip</Typography>
 
+                        {/* Zip */}
+                        <Stack className='!flex !flex-col w-full sm:!w-[48%] md:!w-[14%] !justify-start !items-start'>
+                            <Typography className='!text-(size:--text-title) !text-(color:--black-clr) !w-24 mb-1'>Zip</Typography>
                             <TextField
                                 variant="outlined"
                                 fullWidth
-
                                 placeholder=""
+                                slotProps={{
+                                    htmlInput: { style: { fontSize: '16px', touchAction: 'manipulation' } }
+                                }}
                                 sx={{
-                                    bg: "white", color: "var(--gray-clr)",
+                                    color: "var(--gray-clr)",
                                     "& .MuiInputBase-root": {
-                                        height: "40px",
+                                        height: "40px !important",
+                                        minHeight: "40px !important",
+                                        maxHeight: "40px !important",
                                         color: "var(--gray-clr)",
-                                        marginY: 1
+                                        backgroundColor: "var(--bg-header)",
+                                        boxSizing: "border-box",
                                     },
-                                    // hover
+                                    "& .MuiInputBase-input": {
+                                        height: "40px !important",
+                                        boxSizing: "border-box",
+                                        padding: "0 14px",
+                                        "&:-webkit-autofill": {
+                                            WebkitBoxShadow: "0 0 0 1000px var(--bg-header) inset !important",
+                                            WebkitTextFillColor: "var(--gray-clr) !important",
+                                            caretColor: "var(--gray-clr)",
+                                            transition: "background-color 9999s ease-in-out 0s",
+                                            height: "40px !important",
+                                            padding: "0 14px !important",
+                                        },
+                                    },
                                     "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
                                         borderColor: "var(--border-grey)",
                                     },
-                                    //focus effect
                                     "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
                                         borderColor: "var(--blue-clr)",
-                                        borderWidth: "1px" // Controls the outline thickness
+                                        borderWidth: "1px"
                                     }
                                 }}
                             />
                         </Stack>
 
-
-
                     </Box>
-                    <Stack className=' mx-2 my-3'>
-                        <FormControlLabel control={
-                            <RadioButtonUnchecked
 
-                                name="Check me out "
-
-
-                            />} size="small"
-                            label="Allow Comments" sx={{
+                    <Stack className='my-3'>
+                        <FormControlLabel
+                            control={
+                                <Checkbox size="small" sx={{ color: "var(--border-grey)", '&.Mui-checked': { color: "var(--blue-clr)" } }} />
+                            }
+                            label="Allow Comments"
+                            sx={{
                                 color: "var(--gray-clr)",
                                 "& .MuiFormControlLabel-label": {
-                                    fontSize: "var(--text-title)"
-                                },
-                                "& .MuiSvgIcon-root": { fontSize: "20px", }
-                            }} />
+                                    fontSize: "var(--text-title)",
+                                    color: "var(--black-clr)"
+                                }
+                            }}
+                        />
                     </Stack>
-                    <Button className="!text-white !my-5  !bg-(--blue-clr)" size="small" varaint="contained" sx={{ textTransform: "none" }}
-                    > Sign in</Button>
 
-
+                    <Button
+                        className="!text-white !my-3 !bg-(--blue-clr)"
+                        size="small"
+                        variant="contained"
+                        sx={{
+                            textTransform: "none",
+                            backgroundColor: "var(--blue-clr)",
+                            "&:hover": { backgroundColor: "var(--blue-clr)" }
+                        }}
+                    >
+                        Sign in
+                    </Button>
                 </Box>
             </Box>
 
-            {/* vertical from  */}
-            <Box className=" w-full  md:!w-[47%]  rounded-md bg-white !pb-10 h-[500px]" sx={{ backgroundColor: "var(--bg-header)" }}>
+            {/* vertical form */}
+            <Box className="w-full md:!w-[47%] rounded-md bg-white !pb-10 h-auto" sx={{ backgroundColor: "var(--bg-header)" }}>
                 <Box className="!p-5">
-                    <Typography className='!text-(size:--text-heading)  !text-(color:--black-clr)'> Vertical Form</Typography>
-
+                    <Typography className='!text-(size:--text-heading) !text-(color:--black-clr)'> Vertical Form</Typography>
                 </Box>
                 <Divider className='!w-full !p-0' />
                 <Box className="!p-5 mt-3">
-                    <Stack className='!flex !flex-row !justify-center !items-center  '>
-                        <Typography className='!text-(size:--text-title) !w-24 '>Email</Typography>
-
+                    <Stack className='!flex !flex-row !justify-start !items-center mb-4'>
+                        <Typography className='!text-(size:--text-title) !text-(color:--black-clr) !w-24'>Email</Typography>
                         <TextField
                             variant="outlined"
                             fullWidth
                             type='email'
                             placeholder="Email"
+                            slotProps={{
+                                htmlInput: { style: { fontSize: '16px', touchAction: 'manipulation' } }
+                            }}
                             sx={{
-                                bg: "white", color: "var(--gray-clr)",
+                                color: "var(--gray-clr)",
                                 "& .MuiInputBase-root": {
                                     height: "40px",
                                     color: "var(--gray-clr)",
-                                    marginY: 2
+                                    backgroundColor: "var(--bg-header)",
+                                    "& input:-webkit-autofill": {
+                                        WebkitBoxShadow: "0 0 0 1000px var(--bg-header) inset",
+                                        WebkitTextFillColor: "var(--gray-clr)",
+                                        transition: "background-color 5000s ease-in-out 0s",
+                                    },
                                 },
-                                // hover
                                 "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
                                     borderColor: "var(--border-grey)",
                                 },
-                                //focus effect
                                 "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
                                     borderColor: "var(--blue-clr)",
-                                    borderWidth: "1px" // Controls the outline thickness
+                                    borderWidth: "1px"
                                 }
                             }}
                         />
                     </Stack>
-                    <Stack className='!flex !flex-row !justify-center !my-3 !items-center'>
-                        <Typography className='!text-(size:--text-title) !w-24'>Password</Typography>
+
+                    <Stack className='!flex !flex-row !justify-start !items-center mb-4'>
+                        <Typography className='!text-(size:--text-title) !text-(color:--black-clr) !w-24'>Password</Typography>
                         <OutlinedInput
-                            id={`${outlinedPasswordId}-input`}
                             type={showPassword ? 'text' : 'password'}
+                            placeholder="Password"
+                            fullWidth
+                            slotProps={{
+                                htmlInput: { style: { fontSize: '16px', touchAction: 'manipulation' } }
+                            }}
                             sx={{
-                                bg: "white",
                                 color: "var(--gray-clr)",
-                                width: "400px",
                                 height: "40px",
+                                backgroundColor: "var(--bg-header)",
                                 "& .MuiInputBase-input": {
-                                    height: "40px",
-                                    boxSizing: "border-box",
-                                    padding: "0 14px",
+                                    color: "var(--gray-clr)",
+                                    fontSize: "16px",
+                                    backgroundColor: "var(--bg-header)",
+                                    "&:-webkit-autofill": {
+                                        WebkitBoxShadow: "0 0 0 1000px var(--bg-header) inset",
+                                        WebkitTextFillColor: "var(--gray-clr)",
+                                        transition: "background-color 5000s ease-in-out 0s",
+                                    },
                                 },
                                 "&:hover .MuiOutlinedInput-notchedOutline": {
                                     borderColor: "var(--border-grey)",
@@ -758,9 +869,7 @@ export default function Elements() {
                             endAdornment={
                                 <InputAdornment position="end">
                                     <IconButton
-                                        aria-label={
-                                            showPassword ? 'hide the password' : 'display the password'
-                                        }
+                                        aria-label={showPassword ? 'hide the password' : 'display the password'}
                                         onClick={handleClickShowPassword}
                                         onMouseDown={handleMouseDownPassword}
                                         onMouseUp={handleMouseUpPassword}
@@ -773,81 +882,94 @@ export default function Elements() {
                         />
                     </Stack>
 
-                    {/* radios */}
-                    <Stack className='!flex !flex-row !justify-start !items-start  !my-3 '>
-                        <Typography className='!text-(size:--text-title) !w-24 '>Radios</Typography>
+                    {/* Radios */}
+                    <Stack className='!flex !flex-row !justify-start !items-start mb-4'>
+                        <Typography className='!text-(size:--text-title) !text-(color:--black-clr) !w-24 mt-1'>Radios</Typography>
                         <Box className="!flex !flex-col">
-
-                            <FormControlLabel control={
-                                <RadioButtonChecked
-                                    name="First Radio"
-
-
-                                />} size="small"
-                                label="Allow Comments" sx={{
+                            <FormControlLabel
+                                control={
+                                    <Radio
+                                        size="small"
+                                        name="First Radio"
+                                        sx={{ color: "var(--border-grey)", '&.Mui-checked': { color: "var(--blue-clr)" } }}
+                                    />
+                                }
+                                label="Allow Comments"
+                                sx={{
                                     color: "var(--gray-clr)",
-                                    "& .MuiFormControlLabel-label": {
-                                        fontSize: "var(--text-title)"
-
-                                    },
-                                    "& .MuiSvgIcon-root": { fontSize: "20px", }
-                                }} />
-                            <FormControlLabel control={
-                                <RadioButtonUnchecked
-
-                                    name="Second Radio"
-
-
-                                />} size="small"
-                                label="Allow Comments" sx={{
+                                    "& .MuiFormControlLabel-label": { fontSize: "var(--text-title)", color: "var(--black-clr)" },
+                                    "& .MuiSvgIcon-root": { fontSize: "20px" }
+                                }}
+                            />
+                            <FormControlLabel
+                                control={
+                                    <Radio
+                                        size="small"
+                                        name="Second Radio"
+                                        sx={{ color: "var(--border-grey)", '&.Mui-checked': { color: "var(--blue-clr)" } }}
+                                    />
+                                }
+                                label="Allow Comments"
+                                sx={{
                                     color: "var(--gray-clr)",
-                                    "& .MuiFormControlLabel-label": {
-                                        fontSize: "var(--text-title)"
-                                    },
-                                    "& .MuiSvgIcon-root": { fontSize: "20px", }
-                                }} />
+                                    "& .MuiFormControlLabel-label": { fontSize: "var(--text-title)", color: "var(--black-clr)" },
+                                    "& .MuiSvgIcon-root": { fontSize: "20px" }
+                                }}
+                            />
                             <FormControlLabel
                                 disabled
                                 control={
-                                    <RadioButtonUnchecked
+                                    <Radio
+                                        size="small"
                                         name="Third Radio"
-
-
-                                    />} size="small"
-                                label="Allow Comments" sx={{
+                                        sx={{ color: "var(--border-grey)", '&.Mui-checked': { color: "var(--blue-clr)" } }}
+                                    />
+                                }
+                                label="Allow Comments"
+                                sx={{
                                     color: "var(--gray-clr)",
-                                    "& .MuiFormControlLabel-label": {
-                                        fontSize: "var(--text-title)"
-                                    },
-                                    "& .MuiSvgIcon-root": { fontSize: "20px", }
-                                }} />
+                                    "& .MuiFormControlLabel-label": { fontSize: "var(--text-title)", color: "var(--black-clr)" },
+                                    "& .MuiSvgIcon-root": { fontSize: "20px" }
+                                }}
+                            />
                         </Box>
                     </Stack>
-                    {/* checkbox */}
-                    <Stack className='!flex !flex-row !justify-start !items-center   '>
-                        <Typography className='!text-(size:--text-title) !w-24 '>Checkbox</Typography>
+
+                    {/* Checkbox */}
+                    <Stack className='!flex !flex-row !justify-start !items-center mb-4'>
+                        <Typography className='!text-(size:--text-title) !text-(color:--black-clr) !w-24'>Checkbox</Typography>
                         <Box className="!flex !flex-col">
-
-                            <FormControlLabel control={
-                                <Checkbox
-                                    name="Example Checkbox"
-
-
-                                />} size="small"
-                                label="Allow Comments" sx={{
+                            <FormControlLabel
+                                control={
+                                    <Checkbox
+                                        size="small"
+                                        name="Example Checkbox"
+                                        sx={{ color: "var(--border-grey)", '&.Mui-checked': { color: "var(--blue-clr)" } }}
+                                    />
+                                }
+                                label="Allow Comments"
+                                sx={{
                                     color: "var(--gray-clr)",
-                                    "& .MuiFormControlLabel-label": {
-                                        fontSize: "var(--text-title)"
-                                    },
-                                    "& .MuiSvgIcon-root": { fontSize: "20px", }
-                                }} />
-
+                                    "& .MuiFormControlLabel-label": { fontSize: "var(--text-title)", color: "var(--black-clr)" },
+                                    "& .MuiSvgIcon-root": { fontSize: "20px" }
+                                }}
+                            />
                         </Box>
                     </Stack>
-                    <Button className="!text-white !my-5 !bg-(--blue-clr)" size="small" varaint="contained" sx={{ textTransform: "none" }}>Sign in</Button>
+
+                    <Button
+                        className="!text-white !my-3 !bg-(--blue-clr)"
+                        size="small"
+                        variant="contained"
+                        sx={{
+                            textTransform: "none",
+                            backgroundColor: "var(--blue-clr)",
+                            "&:hover": { backgroundColor: "var(--blue-clr)" }
+                        }}
+                    >
+                        Sign in
+                    </Button>
                 </Box>
-
-
             </Box>
 
 
@@ -1061,13 +1183,21 @@ export default function Elements() {
                                 variant="outlined"
                                 fullWidth
                                 placeholder="First Name"
-                                inputProps={{ style: { fontSize: '16px' } }}
+                                slotProps={{
+                                    htmlInput: { style: { fontSize: '16px', touchAction: 'manipulation' } }
+                                }}
                                 sx={{
-                                    bg: "white", color: "var(--gray-clr)",
+                                    color: "var(--gray-clr)",
                                     "& .MuiInputBase-root": {
                                         height: "40px",
                                         color: "var(--gray-clr)",
-                                        fontSize: "var(--text-title)"
+                                        fontSize: "var(--text-title)",
+                                        backgroundColor: "var(--bg-header)",
+                                        "& input:-webkit-autofill": {
+                                            WebkitBoxShadow: "0 0 0 1000px var(--bg-header) inset",
+                                            WebkitTextFillColor: "var(--gray-clr)",
+                                            transition: "background-color 5000s ease-in-out 0s",
+                                        },
                                     },
                                     "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
                                         borderColor: "var(--border-grey)",
@@ -1082,13 +1212,21 @@ export default function Elements() {
                                 variant="outlined"
                                 fullWidth
                                 placeholder="Last Name"
-                                inputProps={{ style: { fontSize: '16px' } }}
+                                slotProps={{
+                                    htmlInput: { style: { fontSize: '16px', touchAction: 'manipulation' } }
+                                }}
                                 sx={{
-                                    bg: "white", color: "var(--gray-clr)",
+                                    color: "var(--gray-clr)",
                                     "& .MuiInputBase-root": {
                                         height: "40px",
                                         color: "var(--gray-clr)",
-                                        fontSize: "var(--text-title)"
+                                        fontSize: "var(--text-title)",
+                                        backgroundColor: "var(--bg-header)",
+                                        "& input:-webkit-autofill": {
+                                            WebkitBoxShadow: "0 0 0 1000px var(--bg-header) inset",
+                                            WebkitTextFillColor: "var(--gray-clr)",
+                                            transition: "background-color 5000s ease-in-out 0s",
+                                        },
                                     },
                                     "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
                                         borderColor: "var(--border-grey)",
@@ -1117,13 +1255,21 @@ export default function Elements() {
                                 variant="outlined"
                                 fullWidth
                                 placeholder="First Name"
-                                inputProps={{ style: { fontSize: '16px' } }}
+                                slotProps={{
+                                    htmlInput: { style: { fontSize: '16px', touchAction: 'manipulation' } }
+                                }}
                                 sx={{
-                                    bg: "white", color: "var(--gray-clr)",
+                                    color: "var(--gray-clr)",
                                     "& .MuiInputBase-root": {
                                         height: "40px",
                                         color: "var(--gray-clr)",
-                                        fontSize: "var(--text-title)"
+                                        fontSize: "var(--text-title)",
+                                        backgroundColor: "var(--bg-header)",
+                                        "& input:-webkit-autofill": {
+                                            WebkitBoxShadow: "0 0 0 1000px var(--bg-header) inset",
+                                            WebkitTextFillColor: "var(--gray-clr)",
+                                            transition: "background-color 5000s ease-in-out 0s",
+                                        },
                                     },
                                     "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
                                         borderColor: "var(--border-grey)",
@@ -1138,13 +1284,21 @@ export default function Elements() {
                                 variant="outlined"
                                 fullWidth
                                 placeholder="Last Name"
-                                inputProps={{ style: { fontSize: '16px' } }}
+                                slotProps={{
+                                    htmlInput: { style: { fontSize: '16px', touchAction: 'manipulation' } }
+                                }}
                                 sx={{
-                                    bg: "white", color: "var(--gray-clr)",
+                                    color: "var(--gray-clr)",
                                     "& .MuiInputBase-root": {
                                         height: "40px",
                                         color: "var(--gray-clr)",
-                                        fontSize: "var(--text-title)"
+                                        fontSize: "var(--text-title)",
+                                        backgroundColor: "var(--bg-header)",
+                                        "& input:-webkit-autofill": {
+                                            WebkitBoxShadow: "0 0 0 1000px var(--bg-header) inset",
+                                            WebkitTextFillColor: "var(--gray-clr)",
+                                            transition: "background-color 5000s ease-in-out 0s",
+                                        },
                                     },
                                     "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
                                         borderColor: "var(--border-grey)",
@@ -1170,15 +1324,18 @@ export default function Elements() {
                 <Divider className='!w-full !p-0' />
                 <Box className="!p-5 mt-3 !flex !flex-col !gap-4">
 
-                    <Box className="!flex !rounded-md !border !border-[var(--border-grey)] h-10 !flex-row !items-center overflow-hidden" sx={{ backgroundColor: "var(--bg-header)" }}>
+
+                    <Box className="!flex !rounded-md !border !border-[var(--border-grey)] !flex-col sm:!flex-row !items-stretch sm:!items-center overflow-hidden" sx={{ backgroundColor: "var(--bg-header)" }}>
                         <Button
                             variant="contained"
                             sx={{
                                 textTransform: "none",
-                                height: "100%",
+                                height: { xs: "40px", sm: "100%" },
+                                minHeight: "40px",
                                 backgroundColor: "var(--blue-clr)",
                                 borderRadius: "0px",
                                 boxShadow: "none",
+                                whiteSpace: "nowrap",
                                 "&:hover": { backgroundColor: "var(--blue-clr)", boxShadow: "none" }
                             }}
                         >
@@ -1188,11 +1345,13 @@ export default function Elements() {
                             variant="outlined"
                             fullWidth
                             placeholder="Search..."
-                            inputProps={{ style: { fontSize: '16px' } }}
+                            slotProps={{
+                                htmlInput: { style: { fontSize: '16px', touchAction: 'manipulation' } }
+                            }}
                             sx={{
                                 backgroundColor: "transparent",
                                 "& .MuiOutlinedInput-root": {
-                                    height: "100%",
+                                    height: { xs: "40px", sm: "100%" },
                                     borderRadius: "0px",
                                     backgroundColor: "transparent",
                                     "& fieldset": { border: "none" },
@@ -1207,16 +1366,18 @@ export default function Elements() {
                         />
                     </Box>
 
-                    <Box className="!flex !rounded-md !border !border-[var(--border-grey)] h-10 !flex-row !items-center overflow-hidden" sx={{ backgroundColor: "var(--bg-header)" }}>
+                    <Box className="!flex !rounded-md !border !border-[var(--border-grey)] !flex-col sm:!flex-row !items-stretch sm:!items-center overflow-hidden" sx={{ backgroundColor: "var(--bg-header)" }}>
                         <TextField
                             variant="outlined"
                             fullWidth
                             placeholder="Recipient's username"
-                            inputProps={{ style: { fontSize: '16px' } }}
+                            slotProps={{
+                                htmlInput: { style: { fontSize: '16px', touchAction: 'manipulation' } }
+                            }}
                             sx={{
                                 backgroundColor: "transparent",
                                 "& .MuiOutlinedInput-root": {
-                                    height: "100%",
+                                    height: { xs: "40px", sm: "100%" },
                                     borderRadius: "0px",
                                     backgroundColor: "transparent",
                                     "& fieldset": { border: "none" },
@@ -1233,10 +1394,12 @@ export default function Elements() {
                             variant="contained"
                             sx={{
                                 textTransform: "none",
-                                height: "100%",
+                                height: { xs: "40px", sm: "100%" },
+                                minHeight: "40px",
                                 backgroundColor: "var(--blue-clr)",
                                 borderRadius: "0px",
                                 boxShadow: "none",
+                                whiteSpace: "nowrap",
                                 "&:hover": { backgroundColor: "var(--blue-clr)", boxShadow: "none" }
                             }}
                         >
@@ -1244,16 +1407,19 @@ export default function Elements() {
                         </Button>
                     </Box>
 
-                    <Box className="!flex !rounded-md !border !border-[var(--border-grey)] h-10 !flex-row !items-center overflow-hidden" sx={{ backgroundColor: "var(--bg-header)" }}>
+                    <Box className="!flex !rounded-md !border !border-[var(--border-grey)] !flex-col sm:!flex-row !items-stretch sm:!items-center overflow-hidden" sx={{ backgroundColor: "var(--bg-header)" }}>
                         <Button
                             variant="contained"
                             sx={{
                                 textTransform: "none",
-                                height: "100%",
+                                height: { xs: "40px", sm: "100%" },
+                                minHeight: "40px",
                                 backgroundColor: "var(--blue-clr)",
                                 borderRadius: "0px",
                                 boxShadow: "none",
-                                borderRight: "1px solid rgba(255, 255, 255, 0.2)",
+                                whiteSpace: "nowrap",
+                                borderRight: { sm: "1px solid rgba(255, 255, 255, 0.2)" },
+                                borderBottom: { xs: "1px solid rgba(255, 255, 255, 0.2)", sm: "none" },
                                 "&:hover": { backgroundColor: "var(--blue-clr)", boxShadow: "none" }
                             }}
                         >
@@ -1263,10 +1429,12 @@ export default function Elements() {
                             variant="contained"
                             sx={{
                                 textTransform: "none",
-                                height: "100%",
+                                height: { xs: "40px", sm: "100%" },
+                                minHeight: "40px",
                                 backgroundColor: "var(--blue-clr)",
                                 borderRadius: "0px",
                                 boxShadow: "none",
+                                whiteSpace: "nowrap",
                                 "&:hover": { backgroundColor: "var(--blue-clr)", boxShadow: "none" }
                             }}
                         >
@@ -1276,11 +1444,13 @@ export default function Elements() {
                             variant="outlined"
                             fullWidth
                             placeholder="Username"
-                            inputProps={{ style: { fontSize: '16px' } }}
+                            slotProps={{
+                                htmlInput: { style: { fontSize: '16px', touchAction: 'manipulation' } }
+                            }}
                             sx={{
                                 backgroundColor: "transparent",
                                 "& .MuiOutlinedInput-root": {
-                                    height: "100%",
+                                    height: { xs: "40px", sm: "100%" },
                                     borderRadius: "0px",
                                     backgroundColor: "transparent",
                                     "& fieldset": { border: "none" },
@@ -1295,16 +1465,18 @@ export default function Elements() {
                         />
                     </Box>
 
-                    <Box className="!flex !rounded-md !border !border-[var(--border-grey)] h-10 !flex-row !items-center overflow-hidden" sx={{ backgroundColor: "var(--bg-header)" }}>
+                    <Box className="!flex !rounded-md !border !border-[var(--border-grey)] !flex-col sm:!flex-row !items-stretch sm:!items-center overflow-hidden" sx={{ backgroundColor: "var(--bg-header)" }}>
                         <TextField
                             variant="outlined"
                             fullWidth
                             placeholder="Recipient's username"
-                            inputProps={{ style: { fontSize: '16px' } }}
+                            slotProps={{
+                                htmlInput: { style: { fontSize: '16px', touchAction: 'manipulation' } }
+                            }}
                             sx={{
                                 backgroundColor: "transparent",
                                 "& .MuiOutlinedInput-root": {
-                                    height: "100%",
+                                    height: { xs: "40px", sm: "100%" },
                                     borderRadius: "0px",
                                     backgroundColor: "transparent",
                                     "& fieldset": { border: "none" },
@@ -1321,11 +1493,14 @@ export default function Elements() {
                             variant="contained"
                             sx={{
                                 textTransform: "none",
-                                height: "100%",
+                                height: { xs: "40px", sm: "100%" },
+                                minHeight: "40px",
                                 backgroundColor: "var(--blue-clr)",
                                 borderRadius: "0px",
                                 boxShadow: "none",
-                                borderRight: "1px solid rgba(255, 255, 255, 0.2)",
+                                whiteSpace: "nowrap",
+                                borderRight: { sm: "1px solid rgba(255, 255, 255, 0.2)" },
+                                borderTop: { xs: "1px solid rgba(255, 255, 255, 0.2)", sm: "none" },
                                 "&:hover": { backgroundColor: "var(--blue-clr)", boxShadow: "none" }
                             }}
                         >
@@ -1335,10 +1510,12 @@ export default function Elements() {
                             variant="contained"
                             sx={{
                                 textTransform: "none",
-                                height: "100%",
+                                height: { xs: "40px", sm: "100%" },
+                                minHeight: "40px",
                                 backgroundColor: "var(--blue-clr)",
                                 borderRadius: "0px",
                                 boxShadow: "none",
+                                whiteSpace: "nowrap",
                                 "&:hover": { backgroundColor: "var(--blue-clr)", boxShadow: "none" }
                             }}
                         >
@@ -1403,8 +1580,9 @@ export default function Elements() {
                         <TextField
                             variant="outlined"
                             fullWidth
-                            inputProps={{ style: { fontSize: '16px' } }}
-                            sx={{
+                            slotProps={{
+                                htmlInput: { style: { fontSize: '16px', touchAction: 'manipulation' } }
+                            }} sx={{
                                 backgroundColor: "transparent",
                                 "& .MuiOutlinedInput-root": {
                                     height: "100%",
@@ -1426,8 +1604,9 @@ export default function Elements() {
                         <TextField
                             variant="outlined"
                             fullWidth
-                            inputProps={{ style: { fontSize: '16px' } }}
-                            sx={{
+                            slotProps={{
+                                htmlInput: { style: { fontSize: '16px', touchAction: 'manipulation' } }
+                            }} sx={{
                                 backgroundColor: "transparent",
                                 "& .MuiOutlinedInput-root": {
                                     height: "100%",
