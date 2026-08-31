@@ -15,7 +15,7 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import AppleIcon from "@mui/icons-material/Apple";
 import { useNavigate } from "react-router-dom";
-import bg from "/src/assets/WhatsApp Image 2026-07-10 at 6.47.11 PM.jpeg";
+import bg from "/src/assets/bgImg.jpeg";
 import { FcGoogle } from "react-icons/fc";
 
 const inputSx = {
@@ -23,6 +23,14 @@ const inputSx = {
     "& .MuiOutlinedInput-root": {
         borderRadius: 2,
         height: 46,
+        "@media (max-width: 600px)": {
+            fontSize: "16px !important",
+        },
+    },
+    "& .MuiInputBase-input": {
+        "@media (max-width: 600px)": {
+            fontSize: "16px !important",
+        },
     },
 };
 

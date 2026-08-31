@@ -1,10 +1,10 @@
 import React from "react";
-import { Box, Typography, Button, Avatar, Divider, Grid, Card, LinearProgress } from "@mui/material";
+import { Box, Typography, Grid, Card, } from "@mui/material";
 import PrintIcon from "@mui/icons-material/Print";
 import GetAppIcon from "@mui/icons-material/GetApp";
 import PhoneIcon from "@mui/icons-material/Phone";
-import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
-import Img from "/src/assets/WhatsApp Image 2026-07-10 at 6.47.11 PM.jpeg"
+
+import Img from "/src/assets/bgImg.jpeg"
 import { PieChart, Pie, Cell, BarChart, Bar, ResponsiveContainer } from 'recharts';
 
 const barData = [

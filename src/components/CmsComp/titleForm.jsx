@@ -55,8 +55,8 @@ export default function TitleForm({
                                         placeholder='Title'
                                         value={filterTitle}
                                         onChange={(e) => setFilterTitle(e.target.value)}
-                                        className='border border-gray-200 p-2 rounded-md focus:outline-none bg-transparent w-full'
-                                        style={{ fontSize: "var(--text-body)", color: "var(--gray-clr)", height: '38px', boxSizing: 'border-box' }}
+                                        className='border border-gray-200 p-2 rounded-md focus:outline-none bg-transparent w-full text-base md:text-[length:var(--text-body)]'
+                                        style={{ color: "var(--gray-clr)", height: '38px', boxSizing: 'border-box' }}
                                     />
                                 </Box>
 
@@ -66,8 +66,8 @@ export default function TitleForm({
                                         id='status'
                                         value={filterStatus}
                                         onChange={(e) => setFilterStatus(e.target.value)}
-                                        className='border border-gray-200 p-2 rounded-md focus:outline-none bg-transparent w-full'
-                                        style={{ fontSize: "var(--text-body)", color: "var(--gray-clr)", height: '38px', boxSizing: 'border-box' }}
+                                        className='border border-gray-200 p-2 rounded-md focus:outline-none bg-transparent w-full text-base md:text-[length:var(--text-body)]'
+                                        style={{ color: "var(--gray-clr)", height: '38px', boxSizing: 'border-box' }}
                                     >
                                         <option value="" style={{ color: '#000' }}>Select Status</option>
                                         <option value="Published" style={{ color: '#000' }}>Published</option>
@@ -84,8 +84,8 @@ export default function TitleForm({
                                         type="date"
                                         value={filterDate}
                                         onChange={(e) => setFilterDate(e.target.value)}
-                                        className='border border-gray-200 p-2 rounded-md focus:outline-none bg-transparent w-full'
-                                        style={{ fontSize: "var(--text-body)", color: "var(--gray-clr)", height: '38px', boxSizing: 'border-box' }}
+                                        className='border border-gray-200 p-2 rounded-md focus:outline-none bg-transparent w-full text-base md:text-[length:var(--text-body)]'
+                                        style={{ color: "var(--gray-clr)", height: '38px', boxSizing: 'border-box' }}
                                     />
                                 </Box>
                             </Box>

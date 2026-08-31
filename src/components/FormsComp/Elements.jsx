@@ -24,10 +24,9 @@ export default function Elements() {
     return (
         <Box className="!flex !flex-wrap h-auto gap-14">
             {/* input style */}
-            <Box className=" w-full  md:!w-[47%]  rounded-md bg-white !pb-10 h-[300px]" sx={{ backgroundColor: "var(--bg-header)" }}>
+            <Box className="w-full md:!w-[47%] rounded-md bg-white h-auto md:h-[300px] mb-4 md:mb-0" sx={{ backgroundColor: "var(--bg-header)" }}>
                 <Box className="!p-5">
-                    <Typography className='!text-(size:--text-heading)  ' sx={{ color: "var(--black-clr)" }}>Input Style</Typography>
-
+                    <Typography className='!text-[length:var(--text-heading)]' sx={{ color: "var(--black-clr)" }}>Input Style</Typography>
                 </Box>
                 <Divider className='!w-full !p-0' />
                 <Box className="!p-5 mt-3">
@@ -41,14 +40,15 @@ export default function Elements() {
                                 height: "40px",
                                 color: "var(--gray-clr)",
                             },
-                            // hover
+                            "& .MuiInputBase-input": {
+                                fontSize: { xs: "16px", md: "var(--text-body)" },
+                            },
                             "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
                                 borderColor: "var(--border-grey)",
                             },
-                            //focus effect
                             "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
                                 borderColor: "var(--blue-clr)",
-                                borderWidth: "1px" // Controls the outline thickness
+                                borderWidth: "1px"
                             }
                         }}
                     />
@@ -63,37 +63,32 @@ export default function Elements() {
                                 color: "var(--gray-clr)",
                                 borderRadius: "20px"
                             },
-
-                            // hover
+                            "& .MuiInputBase-input": {
+                                fontSize: { xs: "16px", md: "var(--text-body)" },
+                            },
                             "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
                                 borderColor: "var(--border-grey)",
                             },
-                            //focus effect
                             "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
                                 borderColor: "var(--blue-clr)",
-                                borderWidth: "1px" // Controls the outline thickness
+                                borderWidth: "1px"
                             }
                         }}
                     />
-
                 </Box>
-
             </Box>
+
             {/* checkbox style */}
-            <Box className="w-full  md:!w-[47%]  rounded-md bg-white  h-auto" sx={{ backgroundColor: "var(--bg-header)" }}>
-                {/* Header Section */}
+            <Box className="w-full md:!w-[47%] rounded-md bg-white h-auto" sx={{ backgroundColor: "var(--bg-header)" }}>
                 <Box className="!p-5">
-                    <Typography className='!text-(size:--text-heading) !text-(color:--black-clr)'>
+                    <Typography className='!text-[length:var(--text-heading)]' sx={{ color: "var(--black-clr)" }}>
                         Checkbox
                     </Typography>
                 </Box>
                 <Divider className='!w-full !p-0' />
 
-                {/* Checkboxes Area */}
                 <Box className="!p-5 mt-3 !flex !flex-col !gap-3">
-
-                    {/* Row 1: 2 Checkboxes on one line */}
-                    <Box className="!flex !flex-row !justify-between !items-center !ms-2">
+                    <Box className="!flex !flex-col sm:!flex-row !justify-between !items-start sm:!items-center !ms-2 !gap-2 sm:!gap-0">
                         <FormControlLabel
                             control={
                                 <Checkbox
@@ -105,55 +100,53 @@ export default function Elements() {
                                 />
                             }
                             label="Checkbox 1"
-                            className="!w-1/2"
+                            className="!w-full sm:!w-1/2"
                             sx={{ color: "var(--gray-clr)", '& .MuiFormControlLabel-label': { fontSize: "var(--text-title)" } }}
                         />
                         <FormControlLabel
                             control={
                                 <Checkbox
                                     defaultChecked
-                                    sx={{ p: 0.5, '&.Mui-checked': { color: "#5086EC" } }} // Blue
+                                    sx={{ p: 0.5, '&.Mui-checked': { color: "#5086EC" } }}
                                 />
                             }
                             label="Checkbox 2"
-                            className="!w-1/2"
+                            className="!w-full sm:!w-1/2"
                             sx={{ color: "var(--gray-clr)", '& .MuiFormControlLabel-label': { fontSize: "var(--text-title)" } }}
                         />
                     </Box>
 
-                    {/* Row 2: 2 Checkboxes on one line */}
-                    <Box className="!flex !flex-row !justify-between !items-center !ms-2">
+                    <Box className="!flex !flex-col sm:!flex-row !justify-between !items-start sm:!items-center !ms-2 !gap-2 sm:!gap-0">
                         <FormControlLabel
                             control={
                                 <Checkbox
                                     defaultChecked
-                                    sx={{ p: 0.5, '&.Mui-checked': { color: "#34C759" } }} // Green
+                                    sx={{ p: 0.5, '&.Mui-checked': { color: "#34C759" } }}
                                 />
                             }
                             label="Checkbox 3"
-                            className="!w-1/2"
+                            className="!w-full sm:!w-1/2"
                             sx={{ color: "var(--gray-clr)", '& .MuiFormControlLabel-label': { fontSize: "var(--text-title)" } }}
                         />
                         <FormControlLabel
                             control={
                                 <Checkbox
                                     defaultChecked
-                                    sx={{ p: 0.5, '&.Mui-checked': { color: "#FF9500" } }} // Orange
+                                    sx={{ p: 0.5, '&.Mui-checked': { color: "#FF9500" } }}
                                 />
                             }
                             label="Checkbox 4"
-                            className="!w-1/2"
+                            className="!w-full sm:!w-1/2"
                             sx={{ color: "var(--gray-clr)", '& .MuiFormControlLabel-label': { fontSize: "var(--text-title)" } }}
                         />
                     </Box>
 
-                    {/* Row 3: Single Checkbox (Red) */}
-                    <Box className="!flex !flex-row !items-center !ms-2" >
+                    <Box className="!flex !flex-row !items-center !ms-2">
                         <FormControlLabel
                             control={
                                 <Checkbox
                                     defaultChecked
-                                    sx={{ p: 0.5, '&.Mui-checked': { color: "#FF3B30" } }} // Red
+                                    sx={{ p: 0.5, '&.Mui-checked': { color: "#FF3B30" } }}
                                 />
                             }
                             label="Checkbox 5"
@@ -161,57 +154,50 @@ export default function Elements() {
                         />
                     </Box>
 
-                    {/* Spacer (gap) before the icon-only row */}
                     <Box className="h-2" />
 
-                    {/* Row 4: 4 Checkboxes side-by-side with NO labels */}
-                    <Box className="!flex !flex-row !items-center !gap-12 pl-1 !ms-2" >
+                    <Box className="!flex !flex-row !items-center !flex-wrap !gap-6 sm:!gap-12 pl-1 !ms-2">
                         <Checkbox
                             defaultChecked
-                            sx={{ p: 0.5, '&.Mui-checked': { color: "#3293F4" } }} // Light Blue
+                            sx={{ p: 0.5, '&.Mui-checked': { color: "#3293F4" } }}
                         />
                         <Checkbox
                             defaultChecked
-                            sx={{ p: 0.5, '&.Mui-checked': { color: "#6A0DAD" } }} // Purple
+                            sx={{ p: 0.5, '&.Mui-checked': { color: "#6A0DAD" } }}
                         />
                         <Checkbox
                             defaultChecked
-                            sx={{ p: 0.5, '&.Mui-checked': { color: "#34C759" } }} // Green
+                            sx={{ p: 0.5, '&.Mui-checked': { color: "#34C759" } }}
                         />
                         <Checkbox
                             defaultChecked
-                            sx={{ p: 0.5, '&.Mui-checked': { color: "#FF9500" } }} // Orange
+                            sx={{ p: 0.5, '&.Mui-checked': { color: "#FF9500" } }}
                         />
                     </Box>
-
                 </Box>
             </Box>
 
 
             {/* textarea */}
-            <Box className="w-full  md:!w-[47%]   rounded-md bg-white !pb-10 h-[300px]" sx={{ backgroundColor: "var(--bg-header)" }}>
+            <Box className="w-full md:!w-[47%] rounded-md bg-white !pb-10 h-auto md:h-[300px] mb-4 md:mb-0" sx={{ backgroundColor: "var(--bg-header)" }}>
                 <Box className="!p-5">
-                    <Typography className='!text-(size:--text-heading)  !text-(color:--black-clr)'>Textarea</Typography>
+                    <Typography className='!text-[length:var(--text-heading)]' sx={{ color: "var(--black-clr)" }}>Textarea</Typography>
                 </Box>
                 <Divider className='!w-full !p-0' />
-                <Box className="!p-5 mt-3">
-
+                <Box className="!p-5 mt-3 flex justify-center">
                     <TextareaAutosize
                         aria-label="minimum height"
                         minRows={6}
-
-                        style={{ width: 400 }}
-                        className=" !mx-3 rounded-md !border-1 !border-(--border-grey) text-(color:--gray-clr) !focus:outline focus:!outline-1 focus:!outline-[var(--blue-clr)]"
-
+                        style={{ width: '100%', maxWidth: '400px' }}
+                        className="!mx-3 rounded-md !border !border-[var(--border-grey)] text-[var(--gray-clr)] focus:outline focus:outline-1 focus:outline-[var(--blue-clr)] text-base md:text-[length:var(--text-body)] p-2"
                     />
                 </Box>
             </Box>
 
             {/* input size */}
-            <Box className=" w-full  md:!w-[47%]   rounded-md bg-white !pb-10 h-[300px]" sx={{ backgroundColor: "var(--bg-header)" }}>
+            <Box className="w-full md:!w-[47%] rounded-md bg-white !pb-10 h-auto md:h-[300px]" sx={{ backgroundColor: "var(--bg-header)" }}>
                 <Box className="!p-5">
-                    <Typography className='!text-(size:--text-heading)  !text-(color:--black-clr)'>Input Size</Typography>
-
+                    <Typography className='!text-[length:var(--text-heading)]' sx={{ color: "var(--black-clr)" }}>Input Size</Typography>
                 </Box>
                 <Divider className='!w-full !p-0' />
                 <Box className="!p-5 mt-3">
@@ -225,14 +211,15 @@ export default function Elements() {
                                 height: "50px",
                                 color: "var(--gray-clr)",
                             },
-                            // hover
+                            "& .MuiInputBase-input": {
+                                fontSize: { xs: "16px", md: "var(--text-body)" },
+                            },
                             "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
                                 borderColor: "var(--border-grey)",
                             },
-                            //focus effect
                             "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
                                 borderColor: "var(--blue-clr)",
-                                borderWidth: "1px" // Controls the outline thickness
+                                borderWidth: "1px"
                             }
                         }}
                     />
@@ -245,19 +232,16 @@ export default function Elements() {
                             "& .MuiInputBase-root": {
                                 height: "40px",
                                 color: "var(--gray-clr)",
-                                fontSize: "var(--text-title)"
-
-
                             },
-
-                            // hover
+                            "& .MuiInputBase-input": {
+                                fontSize: { xs: "16px", md: "var(--text-title)" },
+                            },
                             "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
                                 borderColor: "var(--border-grey)",
                             },
-                            //focus effect
                             "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
                                 borderColor: "var(--blue-clr)",
-                                borderWidth: "1px" // Controls the outline thickness
+                                borderWidth: "1px"
                             }
                         }}
                     />
@@ -270,31 +254,26 @@ export default function Elements() {
                             "& .MuiInputBase-root": {
                                 height: "30px",
                                 color: "var(--gray-clr)",
-                                fontSize: "var(--text-body)"
-
                             },
-
-                            // hover
+                            "& .MuiInputBase-input": {
+                                fontSize: { xs: "16px", md: "var(--text-body)" },
+                            },
                             "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
                                 borderColor: "var(--border-grey)",
                             },
-                            //focus effect
                             "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
                                 borderColor: "var(--blue-clr)",
-                                borderWidth: "1px" // Controls the outline thickness
+                                borderWidth: "1px"
                             }
                         }}
                     />
-
                 </Box>
-
             </Box>
 
             {/* select size */}
-            <Box className=" w-full  md:!w-[47%]  rounded-md bg-white !pb-10 h-[300px]" sx={{ backgroundColor: "var(--bg-header)" }}>
+            <Box className="w-full md:!w-[47%] rounded-md bg-white !pb-10 h-auto md:h-[300px]" sx={{ backgroundColor: "var(--bg-header)" }}>
                 <Box className="!p-5">
-                    <Typography className='!text-(size:--text-heading)  !text-(color:--black-clr)'>Select Size</Typography>
-
+                    <Typography className='!text-[length:var(--text-heading)]' sx={{ color: "var(--black-clr)" }}>Select Size</Typography>
                 </Box>
                 <Divider className='!w-full !p-0' />
                 <Box className="!p-5 mt-3">
@@ -308,30 +287,28 @@ export default function Elements() {
                             "& .MuiInputBase-root": {
                                 height: "50px",
                                 color: "var(--gray-clr)",
-                                fontSize: "var(--text-heading)"
-
+                            },
+                            "& .MuiInputBase-input": {
+                                fontSize: { xs: "16px", md: "var(--text-heading)" },
                             },
                             // hover
                             "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
                                 borderColor: "var(--border-grey)",
                             },
-                            //focus effect
+                            // focus effect
                             "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
                                 borderColor: "var(--blue-clr)",
                                 borderWidth: "1px"
                             }
                         }}
                     >
-
-                        <MenuItem value="option 1" className="!text-(color:--gray-clr) !text-(size:--text-title)">
+                        <MenuItem value="option 1" className="!text-[var(--gray-clr)] !text-[length:var(--text-title)]">
                             Option 1
                         </MenuItem>
-
-                        <MenuItem value="option 2" className="!text-(color:--gray-clr) !text-(size:--text-title)">
+                        <MenuItem value="option 2" className="!text-[var(--gray-clr)] !text-[length:var(--text-title)]">
                             Option 2
                         </MenuItem>
-
-                        <MenuItem value="option 3" className="!text-(color:--gray-clr) !text-(size:--text-title)">
+                        <MenuItem value="option 3" className="!text-[var(--gray-clr)] !text-[length:var(--text-title)]">
                             Option 3
                         </MenuItem>
                     </TextField>
@@ -345,29 +322,28 @@ export default function Elements() {
                             "& .MuiInputBase-root": {
                                 height: "40px",
                                 color: "var(--gray-clr)",
-                                fontSize: "var(--text-title)"
+                            },
+                            "& .MuiInputBase-input": {
+                                fontSize: { xs: "16px", md: "var(--text-title)" },
                             },
                             // hover
                             "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
                                 borderColor: "var(--border-grey)",
                             },
-                            //focus effect
+                            // focus effect
                             "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
                                 borderColor: "var(--blue-clr)",
                                 borderWidth: "1px"
                             }
                         }}
                     >
-
-                        <MenuItem value="option 1" className="!text-(color:--gray-clr) !text-(size:--text-title)">
+                        <MenuItem value="option 1" className="!text-[var(--gray-clr)] !text-[length:var(--text-title)]">
                             Option 1
                         </MenuItem>
-
-                        <MenuItem value="option 2" className="!text-(color:--gray-clr) !text-(size:--text-title)">
+                        <MenuItem value="option 2" className="!text-[var(--gray-clr)] !text-[length:var(--text-title)]">
                             Option 2
                         </MenuItem>
-
-                        <MenuItem value="option 3" className="!text-(color:--gray-clr) !text-(size:--text-title)">
+                        <MenuItem value="option 3" className="!text-[var(--gray-clr)] !text-[length:var(--text-title)]">
                             Option 3
                         </MenuItem>
                     </TextField>
@@ -381,45 +357,38 @@ export default function Elements() {
                             "& .MuiInputBase-root": {
                                 height: "30px",
                                 color: "var(--gray-clr)",
-                                fontSize: "var(--text-body)"
-
+                            },
+                            "& .MuiInputBase-input": {
+                                fontSize: { xs: "16px", md: "var(--text-body)" },
                             },
                             // hover
                             "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
                                 borderColor: "var(--border-grey)",
                             },
-                            //focus effect
+                            // focus effect
                             "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
                                 borderColor: "var(--blue-clr)",
                                 borderWidth: "1px"
                             }
                         }}
                     >
-
-                        <MenuItem value="option 1" className="!text-(color:--gray-clr) !text-(size:--text-title)">
+                        <MenuItem value="option 1" className="!text-[var(--gray-clr)] !text-[length:var(--text-title)]">
                             Option 1
                         </MenuItem>
-
-                        <MenuItem value="option 2" className="!text-(color:--gray-clr) !text-(size:--text-title)">
+                        <MenuItem value="option 2" className="!text-[var(--gray-clr)] !text-[length:var(--text-title)]">
                             Option 2
                         </MenuItem>
-
-                        <MenuItem value="option 3" className="!text-(color:--gray-clr) !text-(size:--text-title)">
+                        <MenuItem value="option 3" className="!text-[var(--gray-clr)] !text-[length:var(--text-title)]">
                             Option 3
                         </MenuItem>
                     </TextField>
-
-
-
                 </Box>
-
             </Box>
 
             {/* select list */}
-            <Box className="w-full  md:!w-[47%]  rounded-md bg-white !pb-10 h-[300px]" sx={{ backgroundColor: "var(--bg-header)" }}>
+            <Box className="w-full md:!w-[47%] rounded-md bg-white !pb-10 h-auto md:h-[300px]" sx={{ backgroundColor: "var(--bg-header)" }}>
                 <Box className="!p-5">
-                    <Typography className='!text-(size:--text-heading)  !text-(color:--black-clr)'>Select LIst</Typography>
-
+                    <Typography className='!text-[length:var(--text-heading)]' sx={{ color: "var(--black-clr)" }}>Select List</Typography>
                 </Box>
                 <Divider className='!w-full !p-0' />
                 <Box className="!p-5 mt-3">
@@ -433,33 +402,29 @@ export default function Elements() {
                             "& .MuiInputBase-root": {
                                 height: "40px",
                                 color: "var(--gray-clr)",
-
-
                             },
-                            // hover
+                            "& .MuiInputBase-input": {
+                                fontSize: { xs: "16px", md: "var(--text-title)" },
+                            },
                             "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
                                 borderColor: "var(--border-grey)",
                             },
-                            //focus effect
                             "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
                                 borderColor: "var(--blue-clr)",
                                 borderWidth: "1px"
                             }
                         }}
                     >
-
-                        <MenuItem value=" 1" className="!text-(color:--gray-clr) !text-(size:--text-title)">
+                        <MenuItem value=" 1" className="!text-[var(--gray-clr)] !text-[length:var(--text-title)]">
                             1
                         </MenuItem>
-
-                        <MenuItem value=" 2" className="!text-(color:--gray-clr) !text-(size:--text-title)">
+                        <MenuItem value=" 2" className="!text-[var(--gray-clr)] !text-[length:var(--text-title)]">
                             2
                         </MenuItem>
-
-                        <MenuItem value=" 3" className="!text-(color:--gray-clr) !text-(size:--text-title)">
+                        <MenuItem value=" 3" className="!text-[var(--gray-clr)] !text-[length:var(--text-title)]">
                             3
                         </MenuItem>
-                        <MenuItem value=" 4" className="!text-(color:--gray-clr) !text-(size:--text-title)">
+                        <MenuItem value=" 4" className="!text-[var(--gray-clr)] !text-[length:var(--text-title)]">
                             4
                         </MenuItem>
                     </TextField>
@@ -473,44 +438,36 @@ export default function Elements() {
                             "& .MuiInputBase-root": {
                                 height: "40px",
                                 color: "var(--gray-clr)",
-
                             },
-                            // hover
+                            "& .MuiInputBase-input": {
+                                fontSize: { xs: "16px", md: "var(--text-title)" },
+                            },
                             "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
                                 borderColor: "var(--border-grey)",
                             },
-                            //focus effect
                             "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
                                 borderColor: "var(--blue-clr)",
                                 borderWidth: "1px"
                             }
                         }}
                     >
-
-                        <MenuItem value=" 1" className="!text-(color:--gray-clr) !text-(size:--text-title)">
+                        <MenuItem value=" 1" className="!text-[var(--gray-clr)] !text-[length:var(--text-title)]">
                             1
                         </MenuItem>
-
-                        <MenuItem value=" 2" className="!text-(color:--gray-clr) !text-(size:--text-title)">
+                        <MenuItem value=" 2" className="!text-[var(--gray-clr)] !text-[length:var(--text-title)]">
                             2
                         </MenuItem>
-
-                        <MenuItem value=" 3" className="!text-(color:--gray-clr) !text-(size:--text-title)">
+                        <MenuItem value=" 3" className="!text-[var(--gray-clr)] !text-[length:var(--text-title)]">
                             3
                         </MenuItem>
-                        <MenuItem value=" 4" className="!text-(color:--gray-clr) !text-(size:--text-title)">
+                        <MenuItem value=" 4" className="!text-[var(--gray-clr)] !text-[length:var(--text-title)]">
                             4
                         </MenuItem>
-                        <MenuItem value=" 5" className="!text-(color:--gray-clr) !text-(size:--text-title)">
+                        <MenuItem value=" 5" className="!text-[var(--gray-clr)] !text-[length:var(--text-title)]">
                             5
                         </MenuItem>
                     </TextField>
-
-
-
-
                 </Box>
-
             </Box>
 
 
@@ -536,16 +493,16 @@ export default function Elements() {
                                     "& .MuiInputBase-root": {
                                         height: "40px",
                                         color: "var(--gray-clr)",
-                                        // marginY: 1
+
                                     },
-                                    // hover
+
                                     "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
                                         borderColor: "var(--border-grey)",
                                     },
-                                    //focus effect
+
                                     "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
                                         borderColor: "var(--blue-clr)",
-                                        borderWidth: "1px" // Controls the outline thickness
+                                        borderWidth: "1px"
                                     }
                                 }}
                             />
@@ -563,7 +520,7 @@ export default function Elements() {
                                     "& .MuiInputBase-root": {
                                         height: "40px",
                                         color: "var(--gray-clr)",
-                                        // marginY: 1
+
                                     },
                                     // hover
                                     "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
@@ -577,30 +534,26 @@ export default function Elements() {
                                 }}
                             />
                         </Stack>
-                        <Stack className='!flex !flex-col !justify-start !items-start  '>
-
-                            <Typography className='!text-(size:--text-title) !w-24 '>Password</Typography>
-
-                            {/* <InputLabel htmlFor={`${outlinedPasswordId}-input`} className='!text-[size:--text-title] !text-[color:black-clr]'>Password</InputLabel> */}
+                        <Stack className='!flex !flex-col w-[47%] !justify-start !items-start'>
+                            <Typography className='!text-(size:--text-title) !w-24'>Password</Typography>
                             <OutlinedInput
                                 id={`${outlinedPasswordId}-input`}
                                 type={showPassword ? 'text' : 'password'}
+                                placeholder="Password"
+                                fullWidth
                                 sx={{
-                                    backgroundColor: "white",
+                                    bg: "white",
                                     color: "var(--gray-clr)",
                                     height: "40px",
-                                    // my: 1,
-                                    width: "190px", // This is marginY: 1
-
-                                    // Hover effect on the 
+                                    "& .MuiInputBase-input": {
+                                        color: "var(--gray-clr)",
+                                    },
                                     "&:hover .MuiOutlinedInput-notchedOutline": {
                                         borderColor: "var(--border-grey)",
                                     },
-
-                                    // Focus effect on the border
                                     "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
                                         borderColor: "var(--blue-clr)",
-                                        borderWidth: "1px" // Controls the outline thickness
+                                        borderWidth: "1px"
                                     }
                                 }}
                                 endAdornment={
@@ -654,7 +607,7 @@ export default function Elements() {
                                 fullWidth
                                 size="small"
                                 select
-                                defaultValue="Choose..."
+
                                 sx={{
                                     mb: 1, mt: 1, bg: "white", color: "var(--gray-clr)",
                                     "& .MuiInputBase-root": {
@@ -675,7 +628,7 @@ export default function Elements() {
                                 }}
                             >
 
-                                <MenuItem value="choose..." className="!text-(color:--gray-clr) !text-(size:--text-title)">
+                                <MenuItem className="!text-(color:--gray-clr) !text-(size:--text-title)">
                                     Choose...                                </MenuItem>
                                 <MenuItem value="option 1" className="!text-(color:--gray-clr) !text-(size:--text-title)">
                                     Option 1
@@ -779,30 +732,27 @@ export default function Elements() {
                             }}
                         />
                     </Stack>
-                    <Stack className='!flex !flex-row !justify-center !my-3 !items-center '>
-
-                        <Typography className='!text-(size:--text-title) !w-24 '>Password</Typography>
-
-                        {/* <InputLabel htmlFor={`${outlinedPasswordId}-input`} className='!text-[size:--text-title] !text-[color:black-clr]'>Password</InputLabel> */}
+                    <Stack className='!flex !flex-row !justify-center !my-3 !items-center'>
+                        <Typography className='!text-(size:--text-title) !w-24'>Password</Typography>
                         <OutlinedInput
                             id={`${outlinedPasswordId}-input`}
                             type={showPassword ? 'text' : 'password'}
                             sx={{
-                                backgroundColor: "white",
+                                bg: "white",
                                 color: "var(--gray-clr)",
+                                width: "400px",
                                 height: "40px",
-                                my: 1,
-                                width: "400px", // This is marginY: 1
-
-                                // Hover effect on the 
+                                "& .MuiInputBase-input": {
+                                    height: "40px",
+                                    boxSizing: "border-box",
+                                    padding: "0 14px",
+                                },
                                 "&:hover .MuiOutlinedInput-notchedOutline": {
                                     borderColor: "var(--border-grey)",
                                 },
-
-                                // Focus effect on the border
                                 "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
                                     borderColor: "var(--blue-clr)",
-                                    borderWidth: "1px" // Controls the outline thickness
+                                    borderWidth: "1px"
                                 }
                             }}
                             endAdornment={
@@ -901,24 +851,20 @@ export default function Elements() {
             </Box>
 
 
-            {/* checkboxes */}
-            <Box className="w-full  md:!w-[47%]   rounded-md bg-white !pb-10 h-[200px]" sx={{ backgroundColor: "var(--bg-header)" }}>
+            {/* Vertical Checkboxes */}
+            <Box className="w-full md:!w-[47%] rounded-md bg-white !pb-10 h-auto min-h-[200px]" sx={{ backgroundColor: "var(--bg-header)" }}>
                 <Box className="!p-5">
-                    <Typography className='!text-(size:--text-heading)  !text-(color:--black-clr)'>Checkboxes </Typography>
+                    <Typography className='!text-(size:--text-heading) !text-(color:--black-clr)'>Checkboxes</Typography>
                 </Box>
                 <Divider className='!w-full !p-0' />
-                <Box className="!p-5 mt-3 ">
-                    <Stack className='!flex !flex-col  '>
-
+                <Box className="!p-3 sm:!p-5 mt-3">
+                    <Stack className='!flex !flex-col gap-2'>
                         <FormControlLabel
-                            control={
-                                <Checkbox sx={{ p: 0.5 }} /> // Reduced checkbox padding
-                            }
+                            control={<Checkbox sx={{ p: 0.5 }} />}
                             size="small"
-                            label="Option 1 "
+                            label="Option 1"
                             sx={{
                                 color: "var(--gray-clr)",
-                                my: -0.5, // Pulls rows closer vertically
                                 "& .MuiFormControlLabel-label": {
                                     fontSize: "var(--text-title)",
                                     padding: 0,
@@ -927,356 +873,295 @@ export default function Elements() {
                                 "& .MuiSvgIcon-root": { fontSize: "20px" }
                             }}
                         />
-
                         <FormControlLabel
-                            control={
-                                <Checkbox sx={{ p: 0.5 }} /> // Reduced checkbox padding
-                            }
+                            control={<Checkbox sx={{ p: 0.5 }} />}
                             size="small"
-                            label=" Option 2"
+                            label="Option 2"
                             sx={{
                                 color: "var(--gray-clr)",
-                                my: -0.5, // Pulls rows closer vertically
                                 "& .MuiFormControlLabel-label": {
                                     fontSize: "var(--text-title)"
                                 },
                                 "& .MuiSvgIcon-root": { fontSize: "20px" }
                             }}
                         />
-
                         <FormControlLabel
                             disabled
-                            control={
-                                <Checkbox name=" Option 3" sx={{ p: 0.5 }} /> // Reduced checkbox padding
-                            }
+                            control={<Checkbox sx={{ p: 0.5 }} />}
                             size="small"
                             label="Option 3"
                             sx={{
                                 color: "var(--gray-clr)",
-                                my: -0.5, // Pulls rows closer vertically
                                 "& .MuiFormControlLabel-label": {
                                     fontSize: "var(--text-title)"
                                 },
                                 "& .MuiSvgIcon-root": { fontSize: "20px" }
                             }}
                         />
-
                     </Stack>
                 </Box>
             </Box>
 
-            {/* inline checkboxs */}
-            <Box className=" w-full  md:!w-[47%] rounded-md bg-white !pb-10 h-[200px]" sx={{ backgroundColor: "var(--bg-header)" }}>
+            {/* Inline Checkboxes */}
+            <Box className="w-full md:!w-[47%] rounded-md bg-white !pb-10 h-auto min-h-[200px]" sx={{ backgroundColor: "var(--bg-header)" }}>
                 <Box className="!p-5">
-                    <Typography className='!text-(size:--text-heading)  !text-(color:--black-clr)'> Inline Checkboxes </Typography>
-
+                    <Typography className='!text-(size:--text-heading) !text-(color:--black-clr)'>Inline Checkboxes</Typography>
                 </Box>
                 <Divider className='!w-full !p-0' />
-                <Box className="!p-5 mt-3 ">
-
-                    <Stack className='!flex !flex-row !gap-7 !p-2'>
-
-                        <FormControlLabel control={
-                            <Checkbox
-
-
-
-                            />} size="small"
-                            label="Option 1 " sx={{
-                                color: "var(--gray-clr)",
-                                "& .MuiFormControlLabel-label": {
-                                    fontSize: "var(--text-title)"
-
-                                },
-                                "& .MuiSvgIcon-root": { fontSize: "20px", }
-                            }} />
-                        <FormControlLabel control={
-                            <Checkbox
-
-                            />} size="small"
-                            label=" Option 2" sx={{
+                <Box className="!p-3 sm:!p-5 mt-3">
+                    <Stack className='!flex !flex-col sm:!flex-row !gap-4 sm:!gap-7 !p-2 flex-wrap'>
+                        <FormControlLabel
+                            control={<Checkbox />}
+                            size="small"
+                            label="Option 1"
+                            sx={{
                                 color: "var(--gray-clr)",
                                 "& .MuiFormControlLabel-label": {
                                     fontSize: "var(--text-title)"
                                 },
-                                "& .MuiSvgIcon-root": { fontSize: "20px", }
-                            }} />
+                                "& .MuiSvgIcon-root": { fontSize: "20px" }
+                            }}
+                        />
+                        <FormControlLabel
+                            control={<Checkbox />}
+                            size="small"
+                            label="Option 2"
+                            sx={{
+                                color: "var(--gray-clr)",
+                                "& .MuiFormControlLabel-label": {
+                                    fontSize: "var(--text-title)"
+                                },
+                                "& .MuiSvgIcon-root": { fontSize: "20px" }
+                            }}
+                        />
                         <FormControlLabel
                             disabled
-                            control={
-                                <Checkbox
-                                    name=" Option 3"
-
-
-                                />} size="small"
-                            label="Option 3" sx={{
+                            control={<Checkbox />}
+                            size="small"
+                            label="Option 3"
+                            sx={{
                                 color: "var(--gray-clr)",
                                 "& .MuiFormControlLabel-label": {
                                     fontSize: "var(--text-title)"
                                 },
-                                "& .MuiSvgIcon-root": { fontSize: "20px", }
-                            }} />
+                                "& .MuiSvgIcon-root": { fontSize: "20px" }
+                            }}
+                        />
                     </Stack>
-
-
-
                 </Box>
-
-
-
             </Box>
-            {/* radiobutons */}
-            <Box className=" w-full  md:!w-[47%]  rounded-md bg-white !pb-10 h-[200px]" sx={{ backgroundColor: "var(--bg-header)" }}>
+            {/* Vertical Radio Buttons */}
+            <Box className="w-full md:!w-[47%] rounded-md bg-white !pb-10 h-auto min-h-[200px]" sx={{ backgroundColor: "var(--bg-header)" }}>
                 <Box className="!p-5">
-                    <Typography className='!text-(size:--text-heading)  !text-(color:--black-clr)'>Radio Buttons </Typography>
-
+                    <Typography className='!text-(size:--text-heading) !text-(color:--black-clr)'>Radio Buttons</Typography>
                 </Box>
                 <Divider className='!w-full !p-0' />
-                <Box className="!p-5 mt-3 !flex !flex-col">
-
-                    <Stack className='!flex !flex-col !p-2'>
-
-                        <FormControlLabel control={
-                            <RadioButtonUnchecked
-
-
-
-                            />} size="small"
-                            label="Option 1 " sx={{
-                                color: "var(--gray-clr)",
-                                "& .MuiFormControlLabel-label": {
-                                    fontSize: "var(--text-title)"
-
-                                },
-                                "& .MuiSvgIcon-root": { fontSize: "20px", }
-                            }} />
-                        <FormControlLabel control={
-                            <RadioButtonUnchecked
-
-                            />} size="small"
-                            label=" Option 2" sx={{
+                <Box className="!p-3 sm:!p-5 mt-3 !flex !flex-col">
+                    <Stack className='!flex !flex-col gap-2 !p-2'>
+                        <FormControlLabel
+                            control={<RadioButtonUnchecked />}
+                            size="small"
+                            label="Option 1"
+                            sx={{
                                 color: "var(--gray-clr)",
                                 "& .MuiFormControlLabel-label": {
                                     fontSize: "var(--text-title)"
                                 },
-                                "& .MuiSvgIcon-root": { fontSize: "20px", }
-                            }} />
+                                "& .MuiSvgIcon-root": { fontSize: "20px" }
+                            }}
+                        />
+                        <FormControlLabel
+                            control={<RadioButtonUnchecked />}
+                            size="small"
+                            label="Option 2"
+                            sx={{
+                                color: "var(--gray-clr)",
+                                "& .MuiFormControlLabel-label": {
+                                    fontSize: "var(--text-title)"
+                                },
+                                "& .MuiSvgIcon-root": { fontSize: "20px" }
+                            }}
+                        />
                         <FormControlLabel
                             disabled
-                            control={
-                                <RadioButtonUnchecked
-                                    name=" Option 3"
-
-
-                                />} size="small"
-                            label="Option 3" sx={{
+                            control={<RadioButtonUnchecked />}
+                            size="small"
+                            label="Option 3"
+                            sx={{
                                 color: "var(--gray-clr)",
                                 "& .MuiFormControlLabel-label": {
                                     fontSize: "var(--text-title)"
                                 },
-                                "& .MuiSvgIcon-root": { fontSize: "20px", }
-                            }} />
+                                "& .MuiSvgIcon-root": { fontSize: "20px" }
+                            }}
+                        />
                     </Stack>
-
-
-
                 </Box>
-
-
-
             </Box>
-            {/* inline radio btns */}
-            <Box className="w-full  md:!w-[47%] rounded-md bg-white !pb-10 h-[200px]" sx={{ backgroundColor: "var(--bg-header)" }}>
-                <Box className="!p-5">
-                    <Typography className='!text-(size:--text-heading)  !text-(color:--black-clr)'>Radio Buttons </Typography>
 
+            {/* Inline Radio Buttons */}
+            <Box className="w-full md:!w-[47%] rounded-md bg-white !pb-10 h-auto min-h-[200px]" sx={{ backgroundColor: "var(--bg-header)" }}>
+                <Box className="!p-5">
+                    <Typography className='!text-(size:--text-heading) !text-(color:--black-clr)'>Radio Buttons</Typography>
                 </Box>
                 <Divider className='!w-full !p-0' />
-                <Box className="!p-5 mt-3 ">
-
-                    <Stack className='!flex !flex-row !gap-7 !p-2'>
-
-                        <FormControlLabel control={
-                            <RadioButtonUnchecked
-
-
-
-                            />} size="small"
-                            label="Option 1 " sx={{
-                                color: "var(--gray-clr)",
-                                "& .MuiFormControlLabel-label": {
-                                    fontSize: "var(--text-title)"
-
-                                },
-                                "& .MuiSvgIcon-root": { fontSize: "20px", }
-                            }} />
-                        <FormControlLabel control={
-                            <RadioButtonUnchecked
-
-                            />} size="small"
-                            label=" Option 2" sx={{
+                <Box className="!p-3 sm:!p-5 mt-3">
+                    <Stack className='!flex !flex-col sm:!flex-row !gap-4 sm:!gap-7 !p-2 flex-wrap'>
+                        <FormControlLabel
+                            control={<RadioButtonUnchecked />}
+                            size="small"
+                            label="Option 1"
+                            sx={{
                                 color: "var(--gray-clr)",
                                 "& .MuiFormControlLabel-label": {
                                     fontSize: "var(--text-title)"
                                 },
-                                "& .MuiSvgIcon-root": { fontSize: "20px", }
-                            }} />
+                                "& .MuiSvgIcon-root": { fontSize: "20px" }
+                            }}
+                        />
+                        <FormControlLabel
+                            control={<RadioButtonUnchecked />}
+                            size="small"
+                            label="Option 2"
+                            sx={{
+                                color: "var(--gray-clr)",
+                                "& .MuiFormControlLabel-label": {
+                                    fontSize: "var(--text-title)"
+                                },
+                                "& .MuiSvgIcon-root": { fontSize: "20px" }
+                            }}
+                        />
                         <FormControlLabel
                             disabled
-                            control={
-                                <RadioButtonUnchecked
-                                    name=" Option 3"
-
-
-                                />} size="small"
-                            label="Option 3" sx={{
+                            control={<RadioButtonUnchecked />}
+                            size="small"
+                            label="Option 3"
+                            sx={{
                                 color: "var(--gray-clr)",
                                 "& .MuiFormControlLabel-label": {
                                     fontSize: "var(--text-title)"
                                 },
-                                "& .MuiSvgIcon-root": { fontSize: "20px", }
-                            }} />
+                                "& .MuiSvgIcon-root": { fontSize: "20px" }
+                            }}
+                        />
                     </Stack>
-
-
-
                 </Box>
-
-
-
             </Box>
 
-            {/* form grid */}
-            <Box className=" w-full  md:!w-[47%]  rounded-md bg-white !pb-10 h-[170px]" sx={{ backgroundColor: "var(--bg-header)" }}>
+            {/* Form Grid */}
+            <Box className="w-full md:!w-[47%] rounded-md bg-white !pb-10 h-auto min-h-[170px]" sx={{ backgroundColor: "var(--bg-header)" }}>
                 <Box className="!p-5">
-                    <Typography className='!text-(size:--text-heading)  !text-(color:--black-clr)'>  Form Grid</Typography>
-
+                    <Typography className='!text-(size:--text-heading) !text-(color:--black-clr)'>Form Grid</Typography>
                 </Box>
                 <Divider className='!w-full !p-0' />
-                <Box className="!p-5 mt-3">
-                    <Box className="!flex !flex-row !flex-wrap gap-6 ">
-                        <Stack className='!flex !flex-row w-full gap-5 !justify-start !items-start  '>
-
+                <Box className="!p-3 sm:!p-5 mt-3">
+                    <Box className="!flex !flex-col sm:!flex-row !flex-wrap gap-4 sm:gap-6">
+                        <Stack className='!flex !flex-col sm:!flex-row w-full gap-4 sm:gap-5 !justify-start !items-start'>
                             <TextField
                                 variant="outlined"
                                 fullWidth
-
                                 placeholder="First Name"
+                                inputProps={{ style: { fontSize: '16px' } }}
                                 sx={{
                                     bg: "white", color: "var(--gray-clr)",
                                     "& .MuiInputBase-root": {
                                         height: "40px",
                                         color: "var(--gray-clr)",
-                                        // marginY: 1
                                         fontSize: "var(--text-title)"
                                     },
-                                    // hover
                                     "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
                                         borderColor: "var(--border-grey)",
                                     },
-                                    //focus effect
                                     "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
                                         borderColor: "var(--blue-clr)",
-                                        borderWidth: "1px" // Controls the outline thickness
+                                        borderWidth: "1px"
                                     }
                                 }}
                             />
                             <TextField
                                 variant="outlined"
                                 fullWidth
-
                                 placeholder="Last Name"
+                                inputProps={{ style: { fontSize: '16px' } }}
                                 sx={{
                                     bg: "white", color: "var(--gray-clr)",
                                     "& .MuiInputBase-root": {
                                         height: "40px",
                                         color: "var(--gray-clr)",
-                                        // marginY: 1
                                         fontSize: "var(--text-title)"
                                     },
-                                    // hover
                                     "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
                                         borderColor: "var(--border-grey)",
                                     },
-                                    //focus effect
                                     "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
                                         borderColor: "var(--blue-clr)",
-                                        borderWidth: "1px" // Controls the outline thickness
+                                        borderWidth: "1px"
                                     }
                                 }}
                             />
                         </Stack>
                     </Box>
-
-                </Box >
+                </Box>
             </Box>
-            {/* form row */}
-            <Box className="w-full  md:!w-[47%]  rounded-md bg-white !pb-10 h-[170px]" sx={{ backgroundColor: "var(--bg-header)" }}>
-                <Box className="!p-5">
-                    <Typography className='!text-(size:--text-heading)  !text-(color:--black-clr)'>  Form Grid</Typography>
 
+            {/* Form Row */}
+            <Box className="w-full md:!w-[47%] rounded-md bg-white !pb-10 h-auto min-h-[170px]" sx={{ backgroundColor: "var(--bg-header)" }}>
+                <Box className="!p-5">
+                    <Typography className='!text-(size:--text-heading) !text-(color:--black-clr)'>Form Row</Typography>
                 </Box>
                 <Divider className='!w-full !p-0' />
-                <Box className="!p-5 mt-3">
-                    <Box className="!flex !flex-row !flex-wrap gap-6 ">
-                        <Stack className='!flex !flex-row w-full gap-5 !justify-start !items-start  '>
-
+                <Box className="!p-3 sm:!p-5 mt-3">
+                    <Box className="!flex !flex-col sm:!flex-row !flex-wrap gap-4 sm:gap-6">
+                        <Stack className='!flex !flex-col sm:!flex-row w-full gap-4 sm:gap-5 !justify-start !items-start'>
                             <TextField
                                 variant="outlined"
                                 fullWidth
-
                                 placeholder="First Name"
+                                inputProps={{ style: { fontSize: '16px' } }}
                                 sx={{
                                     bg: "white", color: "var(--gray-clr)",
                                     "& .MuiInputBase-root": {
                                         height: "40px",
                                         color: "var(--gray-clr)",
-                                        // marginY: 1
                                         fontSize: "var(--text-title)"
                                     },
-                                    // hover
                                     "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
                                         borderColor: "var(--border-grey)",
                                     },
-                                    //focus effect
                                     "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
                                         borderColor: "var(--blue-clr)",
-                                        borderWidth: "1px" // Controls the outline thickness
+                                        borderWidth: "1px"
                                     }
                                 }}
                             />
                             <TextField
                                 variant="outlined"
                                 fullWidth
-
                                 placeholder="Last Name"
+                                inputProps={{ style: { fontSize: '16px' } }}
                                 sx={{
                                     bg: "white", color: "var(--gray-clr)",
                                     "& .MuiInputBase-root": {
                                         height: "40px",
                                         color: "var(--gray-clr)",
-                                        // marginY: 1
                                         fontSize: "var(--text-title)"
                                     },
-                                    // hover
                                     "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
                                         borderColor: "var(--border-grey)",
                                     },
-                                    //focus effect
                                     "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
                                         borderColor: "var(--blue-clr)",
-                                        borderWidth: "1px" // Controls the outline thickness
+                                        borderWidth: "1px"
                                     }
                                 }}
                             />
                         </Stack>
                     </Box>
-
-                </Box >
+                </Box>
             </Box>
 
             {/* button addons */}
-            <Box className="w-full  md:!w-[47%] rounded-md bg-white !pb-10 h-auto" sx={{ backgroundColor: "var(--bg-header)" }}>
+            <Box className="w-full md:!w-[47%] rounded-md bg-white !pb-10 h-auto" sx={{ backgroundColor: "var(--bg-header)" }}>
                 <Box className="!p-5">
                     <Typography className='!text-(size:--text-heading) !text-(color:--black-clr)'>
                         Button Addons
@@ -1285,8 +1170,7 @@ export default function Elements() {
                 <Divider className='!w-full !p-0' />
                 <Box className="!p-5 mt-3 !flex !flex-col !gap-4">
 
-                    {/* 1. One Button on the Left */}
-                    <Box className="!flex !rounded-md !border !border-[var(--border-grey)] h-10 !flex-row !items-center overflow-hidden">
+                    <Box className="!flex !rounded-md !border !border-[var(--border-grey)] h-10 !flex-row !items-center overflow-hidden" sx={{ backgroundColor: "var(--bg-header)" }}>
                         <Button
                             variant="contained"
                             sx={{
@@ -1303,40 +1187,45 @@ export default function Elements() {
                         <TextField
                             variant="outlined"
                             fullWidth
-
+                            placeholder="Search..."
+                            inputProps={{ style: { fontSize: '16px' } }}
                             sx={{
-                                backgroundColor: "white",
+                                backgroundColor: "transparent",
                                 "& .MuiOutlinedInput-root": {
                                     height: "100%",
                                     borderRadius: "0px",
+                                    backgroundColor: "transparent",
                                     "& fieldset": { border: "none" },
                                 },
                                 "& input": {
                                     color: "var(--gray-clr)",
                                     fontSize: "var(--text-title)",
                                     padding: "0 14px",
+                                    backgroundColor: "transparent",
                                 }
                             }}
                         />
                     </Box>
 
-                    {/* 2. One Button on the Right */}
-                    <Box className="!flex !rounded-md !border !border-[var(--border-grey)] h-10 !flex-row !items-center overflow-hidden">
+                    <Box className="!flex !rounded-md !border !border-[var(--border-grey)] h-10 !flex-row !items-center overflow-hidden" sx={{ backgroundColor: "var(--bg-header)" }}>
                         <TextField
                             variant="outlined"
                             fullWidth
-
+                            placeholder="Recipient's username"
+                            inputProps={{ style: { fontSize: '16px' } }}
                             sx={{
-                                backgroundColor: "white",
+                                backgroundColor: "transparent",
                                 "& .MuiOutlinedInput-root": {
                                     height: "100%",
                                     borderRadius: "0px",
+                                    backgroundColor: "transparent",
                                     "& fieldset": { border: "none" },
                                 },
                                 "& input": {
                                     color: "var(--gray-clr)",
                                     fontSize: "var(--text-title)",
                                     padding: "0 14px",
+                                    backgroundColor: "transparent",
                                 }
                             }}
                         />
@@ -1355,8 +1244,7 @@ export default function Elements() {
                         </Button>
                     </Box>
 
-                    {/* 3. TWO Buttons on the Left */}
-                    <Box className="!flex !rounded-md !border !border-[var(--border-grey)] h-10 !flex-row !items-center overflow-hidden">
+                    <Box className="!flex !rounded-md !border !border-[var(--border-grey)] h-10 !flex-row !items-center overflow-hidden" sx={{ backgroundColor: "var(--bg-header)" }}>
                         <Button
                             variant="contained"
                             sx={{
@@ -1365,7 +1253,7 @@ export default function Elements() {
                                 backgroundColor: "var(--blue-clr)",
                                 borderRadius: "0px",
                                 boxShadow: "none",
-                                borderRight: "1px solid rgba(255, 255, 255, 0.2)", // दोनों बटन के बीच हलकी लाइन के लिए
+                                borderRight: "1px solid rgba(255, 255, 255, 0.2)",
                                 "&:hover": { backgroundColor: "var(--blue-clr)", boxShadow: "none" }
                             }}
                         >
@@ -1387,40 +1275,45 @@ export default function Elements() {
                         <TextField
                             variant="outlined"
                             fullWidth
-
+                            placeholder="Username"
+                            inputProps={{ style: { fontSize: '16px' } }}
                             sx={{
-                                backgroundColor: "white",
+                                backgroundColor: "transparent",
                                 "& .MuiOutlinedInput-root": {
                                     height: "100%",
                                     borderRadius: "0px",
+                                    backgroundColor: "transparent",
                                     "& fieldset": { border: "none" },
                                 },
                                 "& input": {
                                     color: "var(--gray-clr)",
                                     fontSize: "var(--text-title)",
                                     padding: "0 14px",
+                                    backgroundColor: "transparent",
                                 }
                             }}
                         />
                     </Box>
 
-                    {/* 4. TWO Buttons on the Right */}
-                    <Box className="!flex !rounded-md !border !border-[var(--border-grey)] h-10 !flex-row !items-center overflow-hidden">
+                    <Box className="!flex !rounded-md !border !border-[var(--border-grey)] h-10 !flex-row !items-center overflow-hidden" sx={{ backgroundColor: "var(--bg-header)" }}>
                         <TextField
                             variant="outlined"
                             fullWidth
-
+                            placeholder="Recipient's username"
+                            inputProps={{ style: { fontSize: '16px' } }}
                             sx={{
-                                backgroundColor: "white",
+                                backgroundColor: "transparent",
                                 "& .MuiOutlinedInput-root": {
                                     height: "100%",
                                     borderRadius: "0px",
+                                    backgroundColor: "transparent",
                                     "& fieldset": { border: "none" },
                                 },
                                 "& input": {
                                     color: "var(--gray-clr)",
                                     fontSize: "var(--text-title)",
                                     padding: "0 14px",
+                                    backgroundColor: "transparent",
                                 }
                             }}
                         />
@@ -1432,7 +1325,7 @@ export default function Elements() {
                                 backgroundColor: "var(--blue-clr)",
                                 borderRadius: "0px",
                                 boxShadow: "none",
-                                borderRight: "1px solid rgba(255, 255, 255, 0.2)", // दोनों बटन के बीच हलकी लाइन के लिए
+                                borderRight: "1px solid rgba(255, 255, 255, 0.2)",
                                 "&:hover": { backgroundColor: "var(--blue-clr)", boxShadow: "none" }
                             }}
                         >
@@ -1457,7 +1350,7 @@ export default function Elements() {
             </Box>
 
             {/* dropdown btn */}
-            <Box className="w-full  md:!w-[47%] rounded-md bg-white !pb-10 h-auto" sx={{ backgroundColor: "var(--bg-header)" }}>
+            <Box className="w-full md:!w-[47%] rounded-md bg-white !pb-10 h-auto" sx={{ backgroundColor: "var(--bg-header)" }}>
                 <Box className="!p-5">
                     <Typography className='!text-(size:--text-heading) !text-(color:--black-clr)'>
                         Buttons With Dropdowns
@@ -1466,38 +1359,37 @@ export default function Elements() {
                 <Divider className='!w-full !p-0' />
                 <Box className="!p-5 mt-3 !flex !flex-col !gap-4">
 
-                    {/* 1. Dropdown on the Left (State-less) */}
-                    <Box className="!flex !rounded-md !border !border-[var(--border-grey)] h-10 !flex-row !items-center overflow-hidden">
+                    <Box className="!flex !rounded-md !border !border-[var(--border-grey)] h-10 !flex-row !items-center overflow-hidden" sx={{ backgroundColor: "var(--bg-header)" }}>
                         <TextField
                             select
                             defaultValue="dropdown"
                             slotProps={{
                                 select: {
-                                    IconComponent: () => null, // default dropdown arrow हटाने के लिए
+                                    IconComponent: () => null,
                                 }
                             }}
                             sx={{
-                                width: "120px", // Dropdown button की width
+                                width: "120px",
+                                minWidth: "100px",
                                 height: "100%",
                                 backgroundColor: "var(--blue-clr)",
                                 "& .MuiOutlinedInput-root": {
                                     height: "100%",
                                     borderRadius: "0px",
                                     color: "white",
-                                    fontSize: "14px",
+                                    fontSize: "16px",
                                     fontWeight: "medium",
                                     cursor: "pointer",
                                     "& fieldset": { border: "none" },
                                 },
                                 "& .MuiSelect-select": {
-                                    paddingRight: "14px !important", // default arrow space remove
+                                    paddingRight: "14px !important",
                                     display: "flex",
                                     alignItems: "center",
                                     justifyContent: "center",
                                 }
                             }}
                         >
-                            {/* Hidden default value to act as button text */}
                             <MenuItem value="dropdown" disabled sx={{ display: 'none' }}>
                                 Dropdown ▼
                             </MenuItem>
@@ -1511,40 +1403,43 @@ export default function Elements() {
                         <TextField
                             variant="outlined"
                             fullWidth
-
+                            inputProps={{ style: { fontSize: '16px' } }}
                             sx={{
-                                backgroundColor: "white",
+                                backgroundColor: "transparent",
                                 "& .MuiOutlinedInput-root": {
                                     height: "100%",
                                     borderRadius: "0px",
+                                    backgroundColor: "transparent",
                                     "& fieldset": { border: "none" },
                                 },
                                 "& input": {
                                     color: "var(--gray-clr)",
-                                    fontSize: "var(--text-title)",
+                                    fontSize: "16px",
                                     padding: "0 14px",
+                                    backgroundColor: "transparent",
                                 }
                             }}
                         />
                     </Box>
 
-                    {/* 2. Dropdown on the Right (State-less) */}
-                    <Box className="!flex !rounded-md !border !border-[var(--border-grey)] h-10 !flex-row !items-center overflow-hidden">
+                    <Box className="!flex !rounded-md !border !border-[var(--border-grey)] h-10 !flex-row !items-center overflow-hidden" sx={{ backgroundColor: "var(--bg-header)" }}>
                         <TextField
                             variant="outlined"
                             fullWidth
-
+                            inputProps={{ style: { fontSize: '16px' } }}
                             sx={{
-                                backgroundColor: "white",
+                                backgroundColor: "transparent",
                                 "& .MuiOutlinedInput-root": {
                                     height: "100%",
                                     borderRadius: "0px",
+                                    backgroundColor: "transparent",
                                     "& fieldset": { border: "none" },
                                 },
                                 "& input": {
                                     color: "var(--gray-clr)",
-                                    fontSize: "var(--text-title)",
+                                    fontSize: "16px",
                                     padding: "0 14px",
+                                    backgroundColor: "transparent",
                                 }
                             }}
                         />
@@ -1559,13 +1454,14 @@ export default function Elements() {
                             }}
                             sx={{
                                 width: "120px",
+                                minWidth: "100px",
                                 height: "100%",
                                 backgroundColor: "var(--blue-clr)",
                                 "& .MuiOutlinedInput-root": {
                                     height: "100%",
                                     borderRadius: "0px",
                                     color: "white",
-                                    fontSize: "14px",
+                                    fontSize: "16px",
                                     fontWeight: "medium",
                                     cursor: "pointer",
                                     "& fieldset": { border: "none" },

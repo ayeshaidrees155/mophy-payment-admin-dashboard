@@ -118,7 +118,7 @@ export default function ContentTable() {
                         <Box className="flex items-center">
                             <EventNoteIcon className='text-(--gray-clr) my-1' sx={{ fontSize: "var(--text-title)" }} />
                             <Typography component="span" sx={{ fontWeight: "bold", fontSize: "var(--text-title)", color: "var(--black-clr)" }} className='!ms-1'>
-                                Contact List
+                                Content List
                             </Typography>
                         </Box>
                     </AccordionSummary >

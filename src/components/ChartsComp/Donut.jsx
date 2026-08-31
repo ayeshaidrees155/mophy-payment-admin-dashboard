@@ -13,7 +13,7 @@ const centerTextPlugin = {
 
         ctx.save();
 
-        ctx.font = 'bold 13px sans-serif'; t
+        ctx.font = 'bold 13px sans-serif';
         ctx.fillStyle = '#000000';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
