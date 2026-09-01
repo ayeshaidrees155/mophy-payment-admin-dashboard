@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { IconButton, Avatar, Menu, MenuItem, ListItemIcon, ListItemText, ButtonBase } from '@mui/material';
-
 import { RiMenu2Fill } from "react-icons/ri";
 import { HiArrowRight } from "react-icons/hi";
 import { MdOutlineSearch, MdOutlineWbCloudy } from "react-icons/md";
@@ -17,7 +16,6 @@ import NotificationMenu from './NotificationDropdown.jsx';
 import Inbox from './Inbox.jsx';
 import pic from "../../assets/17.jpg";
 import { ThemeContext } from '../../context/ThemeContext.jsx';
-
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 

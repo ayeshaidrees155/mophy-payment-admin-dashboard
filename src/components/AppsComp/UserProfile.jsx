@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Avatar, Box, IconButton, Typography, Stack } from '@mui/material';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-
+import backImg from "/src/assets/back.jpg"
+import profileImg from "/src/assets/profile.png"
 export default function UserProfile() {
     const [profile, setProfile] = useState(() => {
         const stored = localStorage.getItem("ProfileData");
@@ -36,14 +37,14 @@ export default function UserProfile() {
         <Box className="!bg-(--bg-header) w-full h-auto md:h-75 rounded-md py-4 px-4 md:px-5">
             <Box className="rounded-md h-36 md:h-[70%] w-full object-cover"
                 component="img"
-                src='/src/assets/back.jpg'>
+                src={backImg}>
             </Box>
 
             <Box className="flex flex-col md:flex-row items-start md:items-center justify-between mt-2 md:mt-0">
 
                 <Box className="flex flex-col sm:flex-row items-start sm:items-center w-full">
                     <Avatar
-                        src='/src/assets/profile.png'
+                        src={profileImg}
                         className='!w-20 !h-20 md:!w-27 md:!h-27 !-mt-10 sm:!-mt-6 ms-2 md:ms-5 border-4 border-white shrink-0'
                     />
 

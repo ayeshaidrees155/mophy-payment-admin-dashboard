@@ -6,6 +6,9 @@ import CamIcon from '@mui/icons-material/CameraAlt';
 import HeartIcon from '@mui/icons-material/Favorite';
 import Settings from './Settings';
 import AboutMeTab from './AboutMeTab';
+import post1 from "/src/assets/post1.jpg"
+import post2 from "/src/assets/post2.jpg"
+import post9 from "/src/assets/post9.jpg"
 
 export default function ProfileTabs() {
     const [value, setValue] = React.useState('1');
@@ -28,17 +31,17 @@ export default function ProfileTabs() {
     const defaultPosts = [
         {
             id: "1",
-            img: "/src/assets/post1.jpg",
+            img: post1,
             title: "Collection of textile samples lay spread", desc: "A wonderful serenity has take possession of my entire soul like these sweet morning of spare which enjoy whole heart.A wonderful serenity has take possession of my entire soul like these sweet morning of spare which enjoy whole heart."
         },
         {
             id: "2",
-            img: "/src/assets/post2.jpg",
+            img: post2,
             title: "Collection of textile samples lay spread", desc: "A wonderful serenity has take possession of my entire soul like these sweet morning of spare which enjoy whole heart.A wonderful serenity has take possession of my entire soul like these sweet morning of spare which enjoy whole heart."
         },
         {
             id: "3",
-            img: "/src/assets/post1.jpg",
+            img: post1,
             title: "Collection of textile samples lay spread", desc: "A wonderful serenity has take possession of my entire soul like these sweet morning of spare which enjoy whole heart.A wonderful serenity has take possession of my entire soul like these sweet morning of spare which enjoy whole heart."
         },
     ]
@@ -54,7 +57,7 @@ export default function ProfileTabs() {
     const handlePost = () => {
         const finalPost = {
             id: Date.now(),
-            img: "/src/assets/post9.jpg",
+            img: post9,
             title: "My Users Post",
             text: postsData.text
         }

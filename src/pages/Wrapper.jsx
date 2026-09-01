@@ -1,9 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from "../components/header/Navbar";
 import Aside from "../components/header/Aside";
 
 export default function Wrapper({ children }) {
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(window.innerWidth >= 1024);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 1024) {
+                setIsOpen(false);
+            } else {
+                setIsOpen(true);
+            }
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     return (
         <div className="min-h-screen bg-(--bg-body) flex flex-col relative">
@@ -15,11 +27,11 @@ export default function Wrapper({ children }) {
                     style={{ width: isOpen ? '' : '70px' }}
 
                     className={`bg-(--bg-header) transition-all duration-300 fixed lg:sticky top-17 left-0 h-[calc(100vh-4.25rem)] z-40 ${isOpen
-                        ? "w-56 translate-x-0 lg:w-[16%]"
-                        : "w-[70px] -translate-x-full lg:translate-x-0 lg:w-[70px]"
+                            ? "w-56 translate-x-0 lg:w-[16%]"
+                            : "w-[70px] -translate-x-full lg:translate-x-0 lg:w-[70px]"
                         }`}
                 >
-                    <Aside isOpen={isOpen} />
+                    <Aside isOpen={isOpen} setIsOpen={setIsOpen} />
                 </div>
 
                 {isOpen && (

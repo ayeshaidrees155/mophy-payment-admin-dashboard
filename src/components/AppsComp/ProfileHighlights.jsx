@@ -1,32 +1,40 @@
 import React from 'react'
 import { Box, Typography, Button } from '@mui/material'
-
+import img1 from "/src/assets/in.jpg"
+import img2 from "/src/assets/in2.jpg"
+import img3 from "/src/assets/in4.jpg"
+import img4 from "/src/assets/in2.jpg"
+import img5 from "/src/assets/in4.jpg"
+import img6 from "/src/assets/in.jpg"
+import news1 from "/src/assets/news1.jpg"
+import news3 from "/src/assets/new3.jpg"
+import news2 from "/src/assets/new2.jpg"
 export default function ProfileHighlights() {
     const interestImages = [
-        { id: 1, src: '/src/assets/in.jpg', alt: 'Interest 1' },
-        { id: 2, src: '/src/assets/in2.jpg', alt: 'Interest 2' },
-        { id: 3, src: '/src/assets/in4.jpg', alt: 'Interest 3' },
-        { id: 4, src: '/src/assets/in2.jpg', alt: 'Interest 4' },
-        { id: 5, src: '/src/assets/in4.jpg', alt: 'Interest 5' },
-        { id: 6, src: '/src/assets/in.jpg', alt: 'Interest 6' },
+        { id: 1, src: img1, alt: 'Interest 1' },
+        { id: 2, src: img2, alt: 'Interest 2' },
+        { id: 3, src: img3, alt: 'Interest 3' },
+        { id: 4, src: img4, alt: 'Interest 4' },
+        { id: 5, src: img5, alt: 'Interest 5' },
+        { id: 6, src: img6, alt: 'Interest 6' },
     ];
 
     const newsItems = [
         {
             id: 1,
-            image: "/src/assets/news1.jpg",
+            image: news1,
             title: "Compete this projects Monday",
             desc: "I shared this on my fb wall a few months back, and I thought."
         },
         {
             id: 2,
-            image: "/src/assets/new2.jpg",
+            image: news2,
             title: "Development planning",
             desc: "I shared this on my fb wall a few months back, and I thought."
         },
         {
             id: 3,
-            image: "/src/assets/new3.jpg",
+            image: news3,
             title: "Software planning",
             desc: "I shared this on my fb wall a few months back, and I thought."
         }

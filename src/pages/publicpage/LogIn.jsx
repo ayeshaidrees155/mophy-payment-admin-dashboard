@@ -94,7 +94,7 @@ const Login = () => {
 
     return (
         <Box
-            className="flex flex-col md:flex-row w-screen h-screen overflow-hidden items-center justify-center m-0"
+            className="flex flex-col md:flex-row w-screen min-h-screen md:h-screen overflow-y-auto md:overflow-hidden items-center justify-center m-0"
             sx={{ bgcolor: "var(--white)", p: { xs: 1.5, sm: 2 } }}
         >
             <Box
@@ -207,8 +207,19 @@ const Login = () => {
                         onChange={handlePasswordChange}
                         error={Boolean(passwordError)}
                         helperText={passwordError}
-                        inputProps={{ maxLength: 8 }}
                         placeholder="8 digits"
+                        slotProps={{
+                            htmlInput: { maxLength: 8 },
+                            input: {
+                                endAdornment: (
+                                    <InputAdornment position="end">
+                                        <IconButton onClick={() => setShowPassword(!showPassword)} edge="end" size="small">
+                                            {showPassword ? <VisibilityOffIcon fontSize="small" /> : <VisibilityIcon fontSize="small" />}
+                                        </IconButton>
+                                    </InputAdornment>
+                                ),
+                            },
+                        }}
                         sx={{
                             mb: 1.5, bg: "white", color: "var(--gray-clr)",
                             "& .MuiInputBase-root": {
@@ -240,17 +251,6 @@ const Login = () => {
                                 borderColor: "var(--blue-clr)",
                                 borderWidth: "1px"
                             }
-                        }}
-                        slotProps={{
-                            input: {
-                                endAdornment: (
-                                    <InputAdornment position="end">
-                                        <IconButton onClick={() => setShowPassword(!showPassword)} edge="end" size="small">
-                                            {showPassword ? <VisibilityOffIcon fontSize="small" /> : <VisibilityIcon fontSize="small" />}
-                                        </IconButton>
-                                    </InputAdornment>
-                                ),
-                            },
                         }}
                     />
 

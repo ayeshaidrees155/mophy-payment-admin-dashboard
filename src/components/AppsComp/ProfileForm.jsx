@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Accordion, AccordionDetails, AccordionSummary, Typography, Stack, TextField, MenuItem, AccordionActions, Button, Snackbar, Avatar, Alert } from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-
+import p1Img from "/src/assets/p1.jpg"
 export default function ProfileForm() {
     const id = React.useId();
 
@@ -65,7 +65,7 @@ export default function ProfileForm() {
             {/* left side */}
             <Box className="w-full lg:w-[25%] !rounded-md bg-(--bg-header)">
                 <Box className="!h-60 w-full flex flex-col !items-center !justify-center" sx={{ borderBottom: "1px solid var(--border-grey)" }}>
-                    <Avatar src='/src/assets/p1.jpg' className='my-1 !w-[130px] !h-[130px]'></Avatar>
+                    <Avatar src={p1Img} className='my-1 !w-[130px] !h-[130px]'></Avatar>
                     <Typography className='text-(--black-clr) !pt-2'>{profileData.name || "Nella Vita"}</Typography>
                     <Typography className='text-(color:--gray-clr) !m-0 !text-(size:--text-title)'>{profileData.skills || "Developer"}</Typography>
                 </Box>
