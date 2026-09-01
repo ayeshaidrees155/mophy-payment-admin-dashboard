@@ -78,7 +78,7 @@ export default function TitleForm({
                                     </select>
                                 </Box>
 
-                                <Box className="flex flex-col" sx={{ flex: { sm: '1 1 180px' }, minWidth: { xs: '100%', sm: '160px' } }}>
+                                <Box className="flex flex-col" sx={{ flex: { sm: '1 1 200px' }, minWidth: { xs: '100%', sm: '180px' } }}>
                                     <label className='mb-1' style={{ fontSize: "var(--text-body)", color: "var(--black-clr)" }}>Date</label>
                                     <input
                                         type="date"

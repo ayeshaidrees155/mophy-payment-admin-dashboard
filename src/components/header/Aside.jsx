@@ -212,7 +212,6 @@ export default function Aside({ isOpen }) {
                                 sx={getSummaryStyles(panelKey)}
                             >
                                 <div className={`flex items-center w-full ${isOpen ? 'ps-2 mx-1' : 'justify-center'}`}>
-                                    {/* Fix: Replaced IconButton with a div to prevent nested button hydration error */}
                                     <div className="active-icon">
                                         {group.icon}
                                     </div>

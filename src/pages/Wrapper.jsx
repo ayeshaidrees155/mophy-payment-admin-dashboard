@@ -26,8 +26,8 @@ export default function Wrapper({ children }) {
                 {/* Sidebar */}
                 <div
                     className={`bg-(--bg-header) transition-all duration-300 fixed top-17 left-0 h-[calc(100vh-4.25rem)] z-40 shrink-0 ${isOpen
-                            ? "w-56 translate-x-0"
-                            : "w-[70px] -translate-x-full lg:translate-x-0"
+                        ? "w-56 translate-x-0"
+                        : "w-[70px] -translate-x-full lg:translate-x-0"
                         }`}
                 >
                     <Aside isOpen={isOpen} setIsOpen={setIsOpen} />
@@ -41,7 +41,6 @@ export default function Wrapper({ children }) {
                     />
                 )}
 
-                {/* Main Content Area: Added min-w-0 to fix flex item overflow and right-side clipping on smaller screens */}
                 <div
                     onClick={() => {
                         if (window.innerWidth < 1024) setIsOpen(false);
