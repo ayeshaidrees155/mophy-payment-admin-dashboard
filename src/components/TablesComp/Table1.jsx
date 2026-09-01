@@ -35,156 +35,157 @@ const getStatusTheme = (status) => {
 
 export default function RecentPaymentsTable() {
     return (
-        <div className="w-full mb-8">            <Paper
-            elevation={0}
-            className="w-full p-8 px-5 rounded-md"
-            style={{
-                borderColor: 'var(--border-grey)',
-                backgroundColor: "var(--bg-header)"
-            }}
-        >
-            <h2
-                className="mb-4 tracking-wide"
+        <div className="w-full mb-8">
+            <Paper
+                elevation={0}
+                className="w-full p-8  rounded-md"
                 style={{
-                    fontSize: 'var(--text-heading)',
-                    color: "var(--black-clr)",
-                    fontWeight: 600,
+                    borderColor: 'var(--border-grey)',
+                    backgroundColor: "var(--bg-header)"
                 }}
             >
-                Recent Payments Queue
-            </h2>
+                <h2
+                    className="mb-4 tracking-wide"
+                    style={{
+                        fontSize: 'var(--text-heading)',
+                        color: "var(--black-clr)",
+                        fontWeight: 600,
+                    }}
+                >
+                    Recent Payments Queue
+                </h2>
 
-            <Divider
-                className="!-mx-5"
-                style={{ borderColor: 'var(--border-grey)' }}
-            />
+                <Divider
+                    className="!-mx-5"
+                    style={{ borderColor: 'var(--border-grey)' }}
+                />
 
-            <TableContainer>
-                <Table sx={{ minWidth: 650, marginTop: 3 }} aria-label="payments queue table">
-                    <TableHead>
-                        <TableRow style={{ borderBottom: '1px solid var(--border-grey)' }}>
-                            {['#', 'Patient', 'Dr Name', 'Date', 'Status', 'Price', ''].map((header) => (
-                                <TableCell
-                                    key={header}
-                                    style={{
-                                        color: 'var(--text-title)',
-                                        fontWeight: 600,
-                                        borderBottom: 'none',
-                                        fontSize: 'var(--text-title)',
-                                        color: "var(--black-clr)",
-                                        padding: '12px',
-                                        paddingX: 5
-                                    }}
-                                    className="uppercase tracking-wider"
-                                >
-                                    {header}
-                                </TableCell>
-                            ))}
-                        </TableRow>
-                    </TableHead>
-
-                    <TableBody>
-                        {paymentsData.map((row) => {
-                            const theme = getStatusTheme(row.status);
-                            return (
-                                <TableRow
-                                    key={row.id}
-                                    style={{ borderBottom: '1px solid var(--border-grey)' }}
-                                >
+                <TableContainer>
+                    <Table sx={{ minWidth: 650, marginTop: 3 }} aria-label="payments queue table">
+                        <TableHead>
+                            <TableRow style={{ borderBottom: '1px solid var(--border-grey)' }}>
+                                {['#', 'Patient', 'Dr Name', 'Date', 'Status', 'Price', ''].map((header) => (
                                     <TableCell
+                                        key={header}
                                         style={{
-                                            color: 'var(--black-clr)',
-                                            fontWeight: 700,
+                                            color: 'var(--text-title)',
+                                            fontWeight: 600,
                                             borderBottom: 'none',
-                                            fontSize: '14px',
-                                            padding: '10px 12px'
+                                            fontSize: 'var(--text-title)',
+                                            color: "var(--black-clr)",
+                                            padding: '12px',
+                                            paddingX: 5
                                         }}
+                                        className="uppercase tracking-wider"
                                     >
-                                        {row.id}
+                                        {header}
                                     </TableCell>
+                                ))}
+                            </TableRow>
+                        </TableHead>
 
-                                    <TableCell
-                                        style={{
-                                            color: 'var(--gray-clr)',
-                                            borderBottom: 'none',
-                                            fontSize: '14px',
-                                            padding: '10px 12px'
-                                        }}
+                        <TableBody>
+                            {paymentsData.map((row) => {
+                                const theme = getStatusTheme(row.status);
+                                return (
+                                    <TableRow
+                                        key={row.id}
+                                        style={{ borderBottom: '1px solid var(--border-grey)' }}
                                     >
-                                        {row.patient}
-                                    </TableCell>
-
-                                    <TableCell
-                                        style={{
-                                            color: 'var(--gray-clr)',
-                                            borderBottom: 'none',
-                                            fontSize: '14px',
-                                            padding: '10px 12px'
-                                        }}
-                                    >
-                                        {row.drName}
-                                    </TableCell>
-
-                                    <TableCell
-                                        style={{
-                                            color: 'var(--gray-clr)',
-                                            borderBottom: 'none',
-                                            fontSize: '14px',
-                                            padding: '10px 12px'
-                                        }}
-                                    >
-                                        {row.date}
-                                    </TableCell>
-
-                                    <TableCell style={{ borderBottom: 'none', padding: '10px 12px' }}>
-                                        <span
-                                            className="px-4 py-1.5 rounded-full font-bold inline-block"
+                                        <TableCell
                                             style={{
-                                                fontSize: '12px',
-                                                backgroundColor: theme.bg,
-                                                color: theme.text
+                                                color: 'var(--black-clr)',
+                                                fontWeight: 700,
+                                                borderBottom: 'none',
+                                                fontSize: '14px',
+                                                padding: '10px 12px'
                                             }}
                                         >
-                                            {row.status}
-                                        </span>
-                                    </TableCell>
+                                            {row.id}
+                                        </TableCell>
 
-                                    <TableCell
-                                        style={{
-                                            color: 'var(--gray-clr)',
-                                            borderBottom: 'none',
-                                            fontSize: '14px',
-                                            padding: '10px 12px'
-                                        }}
-                                    >
-                                        {row.price}
-                                    </TableCell>
-
-                                    <TableCell style={{ borderBottom: 'none', padding: '10px 12px' }} align="right">
-                                        <IconButton
+                                        <TableCell
                                             style={{
-                                                backgroundColor: theme.bg,
-                                                color: theme.text,
-                                                width: '36px',
-                                                height: '36px'
+                                                color: 'var(--gray-clr)',
+                                                borderBottom: 'none',
+                                                fontSize: '14px',
+                                                padding: '10px 12px'
                                             }}
-                                            className="hover:opacity-85 transition-opacity"
                                         >
+                                            {row.patient}
+                                        </TableCell>
+
+                                        <TableCell
+                                            style={{
+                                                color: 'var(--gray-clr)',
+                                                borderBottom: 'none',
+                                                fontSize: '14px',
+                                                padding: '10px 12px'
+                                            }}
+                                        >
+                                            {row.drName}
+                                        </TableCell>
+
+                                        <TableCell
+                                            style={{
+                                                color: 'var(--gray-clr)',
+                                                borderBottom: 'none',
+                                                fontSize: '14px',
+                                                padding: '10px 12px'
+                                            }}
+                                        >
+                                            {row.date}
+                                        </TableCell>
+
+                                        <TableCell style={{ borderBottom: 'none', padding: '10px 12px' }}>
                                             <span
-                                                className="font-extrabold tracking-tighter"
-                                                style={{ fontSize: '10px', lineHeight: 1 }}
+                                                className="px-4 py-1.5 rounded-full font-bold inline-block"
+                                                style={{
+                                                    fontSize: '12px',
+                                                    backgroundColor: theme.bg,
+                                                    color: theme.text
+                                                }}
                                             >
-                                                •••
+                                                {row.status}
                                             </span>
-                                        </IconButton>
-                                    </TableCell>
-                                </TableRow>
-                            );
-                        })}
-                    </TableBody>
-                </Table>
-            </TableContainer>
-        </Paper>
+                                        </TableCell>
+
+                                        <TableCell
+                                            style={{
+                                                color: 'var(--gray-clr)',
+                                                borderBottom: 'none',
+                                                fontSize: '14px',
+                                                padding: '10px 12px'
+                                            }}
+                                        >
+                                            {row.price}
+                                        </TableCell>
+
+                                        <TableCell style={{ borderBottom: 'none', padding: '10px 12px' }} align="right">
+                                            <IconButton
+                                                style={{
+                                                    backgroundColor: theme.bg,
+                                                    color: theme.text,
+                                                    width: '36px',
+                                                    height: '36px'
+                                                }}
+                                                className="hover:opacity-85 transition-opacity"
+                                            >
+                                                <span
+                                                    className="font-extrabold tracking-tighter"
+                                                    style={{ fontSize: '10px', lineHeight: 1 }}
+                                                >
+                                                    •••
+                                                </span>
+                                            </IconButton>
+                                        </TableCell>
+                                    </TableRow>
+                                );
+                            })}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            </Paper>
         </div>
     );
 }

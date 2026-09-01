@@ -11,10 +11,6 @@ export default function Content() {
             <div>
                 <Path mainpath="CMS" path="Content" />
             </div>
-
-
-
-
             <div>
                 <ContentTable />
             </div>

@@ -18,35 +18,40 @@ export default function Wrapper({ children }) {
     }, []);
 
     return (
-        <div className="min-h-screen bg-(--bg-body) flex flex-col relative">
+        <div className="min-h-screen bg-(--bg-body) flex flex-col relative overflow-x-hidden">
             <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
 
             <div className="flex flex-1 pt-17 w-full relative">
 
+                {/* Sidebar */}
                 <div
-                    style={{ width: isOpen ? '' : '70px' }}
-
-                    className={`bg-(--bg-header) transition-all duration-300 fixed lg:sticky top-17 left-0 h-[calc(100vh-4.25rem)] z-40 ${isOpen
-                            ? "w-56 translate-x-0 lg:w-[16%]"
-                            : "w-[70px] -translate-x-full lg:translate-x-0 lg:w-[70px]"
+                    className={`bg-(--bg-header) transition-all duration-300 fixed top-17 left-0 h-[calc(100vh-4.25rem)] z-40 shrink-0 ${isOpen
+                            ? "w-56 translate-x-0"
+                            : "w-[70px] -translate-x-full lg:translate-x-0"
                         }`}
                 >
                     <Aside isOpen={isOpen} setIsOpen={setIsOpen} />
                 </div>
 
-                {isOpen && (
+                {/* Mobile Backdrop */}
+                {isOpen && window.innerWidth < 1024 && (
                     <div
-                        className="fixed inset-0 bg-black/40 z-30 lg:hidden top-17"
+                        className="fixed inset-0 bg-black/40 z-35 lg:hidden top-17"
                         onClick={() => setIsOpen(false)}
                     />
                 )}
 
+                {/* Main Content Area: Added min-w-0 to fix flex item overflow and right-side clipping on smaller screens */}
                 <div
-                    className={`p-6 bg-(--bg-body) min-h-[calc(100vh-4.25rem)] transition-all duration-300 w-full ${isOpen ? "lg:w-[84%]" : "lg:w-[calc(100%-70px)]"
+                    onClick={() => {
+                        if (window.innerWidth < 1024) setIsOpen(false);
+                    }}
+                    className={`py-6 px-4 sm:px-6 bg-(--bg-body) min-h-[calc(100vh-4.25rem)] flex-1 min-w-0 flex flex-col transition-all duration-300 ml-0 ${isOpen ? "lg:ml-56" : "lg:ml-[70px]"
                         }`}
                 >
-                    {children}
-
+                    <div className="w-full flex flex-col gap-4 mx-auto">
+                        {children}
+                    </div>
                 </div>
             </div>
         </div>

@@ -188,7 +188,7 @@ export default function BlogForm() {
 
 
     return (
-        <Box className="flex flex-col md:flex-row w-full gap-6 p-4">
+        <Box className="flex flex-col md:flex-row w-full gap-6">
             {/* left side */}
             <Box className="w-full lg:w-[60%] h-auto !rounded-md">
 

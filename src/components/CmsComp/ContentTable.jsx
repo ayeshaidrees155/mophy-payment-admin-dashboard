@@ -97,7 +97,7 @@ export default function ContentTable() {
 
     return (
         <>
-            <div className='my-5 w-full max-w-full overflow-x-hidden px-2 sm:px-4'>
+            <div className='my-5 w-full max-w-full overflow-x-hidden  '>
 
                 <TitleForm
                     filterTitle={filterTitle}

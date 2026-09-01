@@ -8,12 +8,10 @@ import { Link } from 'react-router-dom'
 import AddIcon from '@mui/icons-material/Add';
 
 export default function Blog() {
-    // Filter states
     const [filterTitle, setFilterTitle] = useState('');
     const [filterStatus, setFilterStatus] = useState('');
     const [filterDate, setFilterDate] = useState('');
 
-    // Handle Remove Filter
     const handleRemoveFilter = () => {
         setFilterTitle('');
         setFilterStatus('');
@@ -24,7 +22,6 @@ export default function Blog() {
         <Wrapper>
             <Path mainpath="CMS" path="Blog" />
 
-            {/* 1. Filter Form */}
             <div>
                 <TitleForm
                     filterTitle={filterTitle}
@@ -37,7 +34,6 @@ export default function Blog() {
                 />
             </div>
 
-            {/* 2. Add Blog Button - TitleForm aur Table ke darmiyan */}
             <Box sx={{ display: 'flex', justifyContent: 'flex-start', my: 2 }}>
                 <Button
                     component={Link}
@@ -56,7 +52,6 @@ export default function Blog() {
                 </Button>
             </Box>
 
-            {/* 3. Blog Table */}
             <div>
                 <BlogTable
                     filterTitle={filterTitle}

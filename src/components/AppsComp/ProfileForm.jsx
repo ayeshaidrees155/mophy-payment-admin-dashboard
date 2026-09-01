@@ -61,7 +61,7 @@ export default function ProfileForm() {
         setOpenSnackbar(false);
     };
     return (
-        <Box className="!flex !flex-col lg:!flex-row !gap-4 h-auto !my-5 !px-4">
+        <Box className="!flex !flex-col lg:!flex-row !gap-4 h-auto !my-5 ">
             {/* left side */}
             <Box className="w-full lg:w-[25%] !rounded-md bg-(--bg-header)">
                 <Box className="!h-60 w-full flex flex-col !items-center !justify-center" sx={{ borderBottom: "1px solid var(--border-grey)" }}>

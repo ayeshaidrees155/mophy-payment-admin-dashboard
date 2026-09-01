@@ -771,7 +771,7 @@ export default function ContentForm() {
                     </AccordionSummary>
                     <AccordionDetails className="!px-7 ">
                         {/* options */}
-                        <Box className="!border-1 !border-(--border-grey) rounded-md !py-2 !px-4">
+                        <Box className="!border-1 !border-(--border-grey) rounded-md !py-2 !px-4 !text-[var(--black-clr)]">
                             <FormGroup>
                                 <FormControlLabel
                                     control={<Checkbox sx={{ padding: "4px", "& .MuiSvgIcon-root": { fontSize: "20px" } }} />}
@@ -783,7 +783,7 @@ export default function ContentForm() {
                                             paddingLeft: "5px"
                                         }
                                     }}
-                                    className="!text-(size:--text-body) !text-(color:--gray-clr)"
+                                    className="!text-(size:--text-body) !text-(color:--black-clr)"
                                 />
 
                                 <FormControlLabel
