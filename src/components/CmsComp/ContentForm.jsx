@@ -79,7 +79,7 @@ export default function ContentForm() {
         existingContents.push(finalContentData);
 
         localStorage.setItem("ContentData", JSON.stringify(existingContents));
-        alert("Blog data saved....")
+
 
         setContentData({
             title: "",

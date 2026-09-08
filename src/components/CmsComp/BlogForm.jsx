@@ -78,7 +78,7 @@ export default function BlogForm() {
         existingBlogs.push(finalBlogData);
 
         localStorage.setItem("BlogData", JSON.stringify(existingBlogs));
-        alert("Blog data saved....")
+
 
         setBlogData({
             title: "",

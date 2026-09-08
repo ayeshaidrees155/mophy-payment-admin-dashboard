@@ -9,6 +9,7 @@ import img6 from "/src/assets/in.jpg"
 import news1 from "/src/assets/news1.jpg"
 import news3 from "/src/assets/new3.jpg"
 import news2 from "/src/assets/new2.jpg"
+import HighlightImg from "/src/assets/highlights.jpg"
 export default function ProfileHighlights() {
     const interestImages = [
         { id: 1, src: img1, alt: 'Interest 1' },
@@ -108,7 +109,7 @@ export default function ProfileHighlights() {
 
                 <Box
                     component="img"
-                    src="/src/assets/highlights.jpg"
+                    src={HighlightImg}
                     alt="Today Highlights"
                     className="w-full h-[150px] !rounded-md object-cover"
                 />
