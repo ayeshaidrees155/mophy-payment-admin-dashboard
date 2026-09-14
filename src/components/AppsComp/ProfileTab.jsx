@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box, IconButton, Tab, TextareaAutosize, Button, Typography } from '@mui/material';
+import { Box, IconButton, Tab, TextareaAutosize, Button, Typography, Snackbar, Alert } from '@mui/material';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 import LinkIcon from '@mui/icons-material/InsertLink';
 import CamIcon from '@mui/icons-material/CameraAlt';
@@ -12,6 +12,7 @@ import post2 from "/src/assets/post2.jpg"
 
 
 export default function ProfileTabs() {
+    const [snackbarOpen, setSnackbarOpen] = useState(false);
     const [value, setValue] = React.useState('1');
 
     const handleChange = (event, newValue) => {
@@ -69,7 +70,7 @@ export default function ProfileTabs() {
         localStorage.setItem("MyPosts", JSON.stringify(existingPosts))
         setPosts(existingPosts);
         setPostsData({ text: "" })
-        alert("posted")
+        setSnackbarOpen(true);
     }
 
     useEffect(() => {
@@ -81,7 +82,10 @@ export default function ProfileTabs() {
             localStorage.setItem("MyPosts", JSON.stringify(defaultPosts))
         }
     }, [])
-
+    const handleSnackbarClose = (event, reason) => {
+        if (reason === 'clickaway') return;
+        setSnackbarOpen(false);
+    };
     return (
         <Box sx={{ width: '100%', typography: 'body1', background: "var(--bg-header)" }}>
             <TabContext value={value}>
@@ -167,6 +171,17 @@ export default function ProfileTabs() {
                 <TabPanel value="2" sx={{ px: { xs: 1, sm: 0 } }}>{<AboutMeTab />}</TabPanel>
                 <TabPanel value="3" sx={{ px: { xs: 1, sm: 0 } }}>{<Settings />}</TabPanel>
             </TabContext>
+
+            <Snackbar
+                open={snackbarOpen}
+                autoHideDuration={3000}
+                onClose={handleSnackbarClose}
+                anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+            >
+                <Alert onClose={handleSnackbarClose} severity="success" variant="filled" sx={{ width: '100%' }}>
+                    Post uploaded successfully!
+                </Alert>
+            </Snackbar>
         </Box>
     );
 }
