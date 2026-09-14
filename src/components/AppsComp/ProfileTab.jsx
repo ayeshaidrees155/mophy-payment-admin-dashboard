@@ -41,7 +41,7 @@ export default function ProfileTabs() {
         },
         {
             id: "3",
-            img: post1,
+            img: post9,
             title: "Collection of textile samples lay spread", desc: "A wonderful serenity has take possession of my entire soul like these sweet morning of spare which enjoy whole heart.A wonderful serenity has take possession of my entire soul like these sweet morning of spare which enjoy whole heart."
         },
     ]
