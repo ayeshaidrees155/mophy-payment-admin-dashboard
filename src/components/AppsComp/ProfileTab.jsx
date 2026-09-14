@@ -143,7 +143,8 @@ export default function ProfileTabs() {
                                 <Box className="rounded-md h-48 sm:h-[70%] w-full object-cover"
                                     component="img"
                                     sx={{ height: { xs: 200, sm: 300 } }}
-                                    src={post.img} />
+                                    src={post.img}
+                                    alt='My Post' />
                                 <Typography className='!font-bold text-(color:--black-clr) !my-2' variant='h6'>{post.title}</Typography>
                                 <Typography className='text-(color:--gray-clr) text-sm sm:text-base'>
                                     {post.text ? post.text : post.desc}
