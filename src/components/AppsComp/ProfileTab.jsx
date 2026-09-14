@@ -6,9 +6,9 @@ import CamIcon from '@mui/icons-material/CameraAlt';
 import HeartIcon from '@mui/icons-material/Favorite';
 import Settings from './Settings';
 import AboutMeTab from './AboutMeTab';
-import post1 from "/src/assets/post1.jpg"
 import post2 from "/src/assets/post2.jpg"
 import post9 from "/src/assets/post9.jpg"
+import post1 from "/src/assets/post1.jpg"
 
 export default function ProfileTabs() {
     const [value, setValue] = React.useState('1');

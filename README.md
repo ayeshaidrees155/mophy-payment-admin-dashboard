@@ -1,18 +1,43 @@
-# React + Vite
+# Mophy Payment Admin Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+> A modern, fully-featured, and professional admin dashboard designed for payment management, content administration, and analytics. Built with high performance and responsiveness in mind.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Tech Stack
 
-## React Compiler
+- **Framework:** Vite + React (JavaScript/TypeScript)
+- **UI Library:** Material-UI (MUI)
+- **Styling:** Tailwind CSS
+- **Icons:** Lucide React / Material Icons
+- **Deployment:** Vercel
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+---
 
-Note: This will impact Vite dev & build performances.
+## ✨ Features & Pages
 
-## Expanding the Oxlint configuration
+- **📊 Comprehensive Analytics Dashboard:** Interactive charts, financial metrics, and transaction overviews.
+- **💳 Payment & Transaction Management:** Advanced tables for tracking payments, invoices, statuses, and history.
+- **📝 Content & Blog Management:** Dedicated views for creating, editing, and organizing blog posts and content.
+- **👤 User & Profile Management:** Profile settings, user details, and role/permission configurations.
+- **📊 Advanced Data Tables:** Sortable, filterable, and paginated tables for managing massive datasets.
+- **📋 Form Integrations:** Clean, validated forms for adding posts, updating profiles, and editing records.
+- **🌙 Responsive & Modern UI:** Crafted with a blend of MUI components and Tailwind utility classes for a seamless experience across devices.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+---
+
+## 📁 Project Structure
+
+```text
+mophy-payment-admin-dashboard/
+├── public/                 # Static assets and favicons
+├── src/
+│   ├── assets/             # Images, logos, and global graphics
+│   ├── components/         # Reusable UI components (Tables, Charts, Forms, Navbar, Sidebar)
+│   ├── pages/              # Main view components (Dashboard, Blog, Profile, Add Post, Tables)
+│   ├── App.jsx / App.tsx   # Root component & routing
+│   ├── main.jsx / main.tsx # Application entry point
+│   └── index.css           # Global CSS & Tailwind directives
+├── tailwind.config.js      # Tailwind CSS configuration
+├── package.json            # Dependencies and scripts
+└── README.md               # Project documentation
