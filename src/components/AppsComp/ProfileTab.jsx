@@ -10,6 +10,7 @@ import post1 from "/src/assets/post1.jpg"
 import post2 from "/src/assets/post2.jpg"
 
 
+
 export default function ProfileTabs() {
     const [value, setValue] = React.useState('1');
 
@@ -58,7 +59,7 @@ export default function ProfileTabs() {
     const handlePost = () => {
         const finalPost = {
             id: Date.now(),
-            img: post9,
+            img: post2,
             title: "My Users Post",
             text: postsData.text
         }
