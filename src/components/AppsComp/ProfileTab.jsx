@@ -8,7 +8,7 @@ import Settings from './Settings';
 import AboutMeTab from './AboutMeTab';
 import post2 from "/src/assets/post2.jpg"
 import post9 from "/src/assets/post9.jpg"
-import post1 from "/src/assets/post1.jpg"
+import post8 from "/src/assets/post8.jpg"
 
 export default function ProfileTabs() {
     const [value, setValue] = React.useState('1');
@@ -31,12 +31,13 @@ export default function ProfileTabs() {
     const defaultPosts = [
         {
             id: "1",
-            img: post1,
-            title: "Collection of textile samples lay spread", desc: "A wonderful serenity has take possession of my entire soul like these sweet morning of spare which enjoy whole heart.A wonderful serenity has take possession of my entire soul like these sweet morning of spare which enjoy whole heart."
+            img: post2,
+            title: "Collection of textile samples lay spread",
+            desc: "A wonderful serenity has take possession of my entire soul like these sweet morning of spare which enjoy whole heart.A wonderful serenity has take possession of my entire soul like these sweet morning of spare which enjoy whole heart."
         },
         {
             id: "2",
-            img: post2,
+            img: post8,
             title: "Collection of textile samples lay spread", desc: "A wonderful serenity has take possession of my entire soul like these sweet morning of spare which enjoy whole heart.A wonderful serenity has take possession of my entire soul like these sweet morning of spare which enjoy whole heart."
         },
         {

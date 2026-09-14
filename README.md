@@ -41,3 +41,4 @@ mophy-payment-admin-dashboard/
 ├── tailwind.config.js      # Tailwind CSS configuration
 ├── package.json            # Dependencies and scripts
 └── README.md               # Project documentation
+```
